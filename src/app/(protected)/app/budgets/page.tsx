@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Target, AlertCircle, Plus } from 'lucide-react'
 import { formatMoney } from '@/lib/money'
 import { normalizeIcon } from '@/lib/utils'
+import { getTranslatedCategoryName } from '@/features/categories/utils'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
 
@@ -89,7 +90,7 @@ export default function BudgetsPage() {
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-bold text-text-main text-lg leading-tight">{cat.name}</h3>
+                      <h3 className="font-bold text-text-main text-lg leading-tight">{getTranslatedCategoryName(cat.name, t)}</h3>
                       <p className="text-xs font-medium text-text-muted mt-0.5">
                         {budgetAmount > 0 ? t('budgets.limit', 'Batas: {{amount}}', { amount: formatMoney(budgetAmount, 'IDR', 'id-ID') }) : t('budgets.not_set', 'Belum diatur')}
                       </p>

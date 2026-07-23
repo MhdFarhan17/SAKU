@@ -26,6 +26,18 @@
     "saving": "Menyimpan...",
     "save_btn": "Simpan Kategori"
   },
+  "categories_default": {
+    "food": "Makanan",
+    "transport": "Transportasi",
+    "bills": "Tagihan",
+    "entertainment": "Hiburan",
+    "shopping": "Belanja",
+    "health": "Kesehatan",
+    "salary": "Gaji",
+    "investment": "Investasi",
+    "gift": "Pemberian",
+    "bonus": "Bonus"
+  },
   "navbar": {
     "home": "Beranda",
     "features": "Fitur",

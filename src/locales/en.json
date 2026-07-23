@@ -26,6 +26,18 @@
     "saving": "Saving...",
     "save_btn": "Save Category"
   },
+  "categories_default": {
+    "food": "Food",
+    "transport": "Transportation",
+    "bills": "Bills",
+    "entertainment": "Entertainment",
+    "shopping": "Shopping",
+    "health": "Health",
+    "salary": "Salary",
+    "investment": "Investment",
+    "gift": "Gift",
+    "bonus": "Bonus"
+  },
   "navbar": {
     "home": "Home",
     "features": "Features",

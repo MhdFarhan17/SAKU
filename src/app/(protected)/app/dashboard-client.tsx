@@ -10,6 +10,7 @@ import { DashboardCharts } from '@/components/dashboard-charts'
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import { useTranslation } from 'react-i18next'
 import { normalizeIcon } from '@/lib/utils'
+import { getTranslatedCategoryName } from '@/features/categories/utils'
 
 interface DashboardClientProps {
   displayName: string
@@ -91,7 +92,8 @@ export function DashboardClient({ displayName, totalBalance, recentTx }: Dashboa
                 
                 const iconBg = isIncome ? 'bg-income/10 text-income' : isExpense ? 'bg-expense/10 text-expense' : 'bg-blue-500/10 text-blue-500'
                 
-                const catName = tx.categories?.name || (isTransfer ? t('dashboard.transfer', 'Transfer') : t('dashboard.other', 'Lainnya'))
+                const rawCatName = tx.categories?.name
+                const catName = rawCatName ? getTranslatedCategoryName(rawCatName, t) : (isTransfer ? t('dashboard.transfer', 'Transfer') : t('dashboard.other', 'Lainnya'))
 
                 return (
                   <div key={tx.id} className="flex items-center justify-between p-4 hover:bg-surface-subtle transition-all duration-200 cursor-pointer active:scale-[0.98]">
