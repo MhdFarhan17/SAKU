@@ -30,8 +30,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   
   // Protect onboarding redirect loop
   const headersList = await headers()
-  const pathname = headersList.get('x-invoke-path') || ''
-  const isOnboardingPage = pathname.includes('/app/onboarding')
+  const pathname = headersList.get('x-pathname') || ''
+  const isOnboardingPage = pathname.startsWith('/app/onboarding')
 
   if (settings && !settings.onboarding_complete && !isOnboardingPage) {
     redirect('/app/onboarding')
