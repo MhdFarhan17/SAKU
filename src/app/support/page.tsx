@@ -5,7 +5,7 @@ import { MarketingNavbar } from '@/components/marketing-navbar'
 import { MarketingFooter } from '@/components/marketing-footer'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import { Button } from '@/components/ui/button'
-import { Book, Wallet, Shield, Target, MessageCircle, ChevronRight, ArrowLeft, AlignLeft } from 'lucide-react'
+import { Book, Wallet, Shield, Target, MessageCircle, ChevronRight, ArrowLeft, AlignLeft, Search } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getSupportArticles, Article } from '@/data/support-articles'
 import { useTranslation, Trans } from 'react-i18next'
@@ -22,7 +22,7 @@ export default function SupportPage() {
   // Animation Variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
   }
   
   const staggerContainer = {

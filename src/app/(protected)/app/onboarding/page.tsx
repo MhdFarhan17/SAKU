@@ -38,13 +38,13 @@ export default function OnboardingPage() {
       const res = await completeOnboarding(data)
       if (res?.error) {
         alert(res.error)
-        setLoading(false)
+      } else {
+        nextStep()
       }
-    } catch (error) {
-      // Next.js redirect() throws an error. 
-      // We catch it to prevent immediate navigation so we can show the success screen.
       setLoading(false)
-      nextStep()
+    } catch (error) {
+      alert("Terjadi kesalahan. Silakan coba lagi.")
+      setLoading(false)
     }
   }
 
@@ -209,7 +209,7 @@ export default function OnboardingPage() {
                 </div>
 
                 <Button
-                  onClick={() => router.push('/app')}
+                  onClick={() => window.location.href = '/app'}
                   className="w-full h-14 rounded-[12px] bg-[#9fe870] hover:bg-[#8bd45f] text-[#0e0f0c] font-black text-lg mt-4 group"
                 >
                   Masuk ke Dasbor

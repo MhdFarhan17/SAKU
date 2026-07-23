@@ -40,6 +40,6 @@ export async function completeOnboarding(formData: FormData) {
     return { error: 'Failed to update settings: ' + settingsError.message }
   }
 
-  // 3. Redirect to dashboard
-  redirect('/app')
+  // 3. Return success
+  return { success: true }
 }
