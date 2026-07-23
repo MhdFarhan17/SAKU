@@ -1,4 +1,18 @@
--- Create the function that will handle the new user trigger
+-- Fix legacy Lucide icon strings to emoji icons for existing users
+-- This migration fixes icons that were stored as Lucide component names
+
+-- Update existing categories with legacy string icons to emoji
+update public.categories set icon = '🍔' where icon = 'coffee';
+update public.categories set icon = '🚗' where icon = 'car';
+update public.categories set icon = '🛍️' where icon = 'shopping-bag';
+update public.categories set icon = '🧾' where icon = 'file-text';
+update public.categories set icon = '💊' where icon = 'activity';
+update public.categories set icon = '🎮' where icon = 'film';
+update public.categories set icon = '💰' where icon = 'briefcase';
+update public.categories set icon = '📈' where icon = 'trending-up';
+update public.categories set icon = '🎁' where icon = 'gift';
+
+-- Recreate the handle_new_user function with correct emoji icons
 create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
@@ -28,8 +42,3 @@ begin
   return new;
 end;
 $$;
-
--- Create the trigger
-create trigger on_auth_user_created
-  after insert on auth.users
-  for each row execute procedure public.handle_new_user();
