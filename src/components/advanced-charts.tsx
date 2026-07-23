@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
+import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip as RechartsTooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
+import { normalizeIcon } from '@/lib/utils'
 import { PieChart as PieChartIcon, BarChart3, TrendingUp, TrendingDown, Wallet, Calendar } from 'lucide-react'
 import { formatMoney } from '@/lib/money'
 import { useTransactions } from '@/features/transactions/hooks'
@@ -87,7 +88,7 @@ export function AdvancedCharts({ initialTransactions }: { initialTransactions: a
           const rawCatName = tx.categories?.name || 'Lain-lain'
           const catName = rawCatName === 'Lain-lain' ? t('transactions.other', 'Lainnya') : getTranslatedCategoryName(rawCatName, t)
           const color = tx.categories?.color || '#cbd5e1'
-          const icon = tx.categories?.icon || '🛒'
+          const icon = normalizeIcon(tx.categories?.icon) || '🛒'
           if (!expenseTotals[catName]) expenseTotals[catName] = { value: 0, color, icon }
           expenseTotals[catName].value += tx.amount_minor
         }

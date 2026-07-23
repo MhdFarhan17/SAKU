@@ -7,6 +7,7 @@ import { useBudgetSheet } from '@/store/use-budget-sheet'
 import { Card, CardContent } from '@/components/ui/card'
 import { Target, AlertCircle, Plus } from 'lucide-react'
 import { formatMoney } from '@/lib/money'
+import { normalizeIcon } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from 'react-i18next'
 
@@ -82,11 +83,10 @@ export default function BudgetsPage() {
               <CardContent className="p-5">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div 
-                      className="w-12 h-12 rounded-[16px] flex items-center justify-center text-white font-bold text-2xl shadow-sm"
-                      style={{ backgroundColor: cat.color || '#cbd5e1' }}
-                    >
-                      {(cat as any).icon || cat.name[0].toUpperCase()}
+                    <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-[16px] text-xl" style={{ backgroundColor: cat.color || '#e2e8f0', color: '#fff' }}>
+                      <span className="text-[20px] leading-none">
+                        {normalizeIcon((cat as any).icon) || cat.name[0].toUpperCase()}
+                      </span>
                     </div>
                     <div>
                       <h3 className="font-bold text-text-main text-lg leading-tight">{cat.name}</h3>

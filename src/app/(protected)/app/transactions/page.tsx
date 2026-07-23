@@ -7,6 +7,8 @@ import { formatDate, formatTime } from '@/lib/date'
 import { Button } from '@/components/ui/button'
 import { Plus, Activity, Search, Download } from 'lucide-react'
 import { useTransactionSheet } from '@/store/use-transaction-sheet'
+import { Check, X } from 'lucide-react'
+import { normalizeIcon } from '@/lib/utils'
 import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { generateMonthlyReport, PDFTransactionData } from '@/lib/pdf'
@@ -233,8 +235,10 @@ export default function TransactionsPage() {
                       className="p-4 flex items-center justify-between hover:bg-surface-subtle transition-all duration-200 cursor-pointer active:scale-[0.98]"
                     >
                       <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center font-bold text-xl shrink-0 ${iconBg}`}>
-                          {tx.categories?.icon || (isTransfer ? '🔄' : catName[0].toUpperCase())}
+                        <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center font-bold shrink-0 ${iconBg}`}>
+                          <span className="text-xl leading-none">
+                            {normalizeIcon(tx.categories?.icon) || (isTransfer ? '🔄' : catName[0].toUpperCase())}
+                          </span>
                         </div>
                         <div className="flex flex-col">
                           <span className="text-base font-bold text-text-main leading-tight">{catName}</span>

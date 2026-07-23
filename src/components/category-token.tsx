@@ -1,5 +1,5 @@
 import * as React from "react"
-import { cn } from "@/lib/utils"
+import { cn, normalizeIcon } from "@/lib/utils"
 import { Tag } from "lucide-react"
 
 export interface CategoryTokenProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -21,7 +21,7 @@ const CategoryToken = React.forwardRef<HTMLDivElement, CategoryTokenProps>(
         {...props}
       >
         {icon ? (
-          <span className="text-[14px] leading-none">{icon}</span>
+          <span className="text-[14px] leading-none">{normalizeIcon(icon)}</span>
         ) : (
           <Tag className="w-3 h-3" />
         )}

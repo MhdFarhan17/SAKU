@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useCategories, useCreateCategory, useUpdateCategory, useDeleteCategory, useSeedCategories } from '@/features/categories/hooks'
 import { Card, CardContent } from '@/components/ui/card'
 import { CategoryToken } from '@/components/category-token'
+import { normalizeIcon } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Plus, Trash2, Sparkles } from 'lucide-react'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
@@ -47,7 +48,7 @@ export default function CategoriesPage() {
     setEditId(cat.id)
     setName(cat.name)
     setKind(cat.kind)
-    setIcon(cat.icon || '')
+    setIcon(normalizeIcon(cat.icon))
     setIsOpen(true)
   }
 

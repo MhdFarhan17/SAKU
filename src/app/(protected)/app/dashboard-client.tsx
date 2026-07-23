@@ -9,6 +9,7 @@ import { logout } from '@/app/(auth)/actions'
 import { DashboardCharts } from '@/components/dashboard-charts'
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import { useTranslation } from 'react-i18next'
+import { normalizeIcon } from '@/lib/utils'
 
 interface DashboardClientProps {
   displayName: string
@@ -95,8 +96,10 @@ export function DashboardClient({ displayName, totalBalance, recentTx }: Dashboa
                 return (
                   <div key={tx.id} className="flex items-center justify-between p-4 hover:bg-surface-subtle transition-all duration-200 cursor-pointer active:scale-[0.98]">
                     <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center font-bold text-xl shrink-0 ${iconBg}`}>
-                        {tx.categories?.icon || (isTransfer ? '🔄' : catName[0].toUpperCase())}
+                      <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center font-bold ${iconBg}`}>
+                        <span className="text-xl">
+                          {normalizeIcon(tx.categories?.icon) || (isTransfer ? '🔄' : catName[0].toUpperCase())}
+                        </span>
                       </div>
                       <div className="flex flex-col">
                         <span className="text-base font-bold text-text-main leading-tight">{catName}</span>
