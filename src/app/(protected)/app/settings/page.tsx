@@ -16,7 +16,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { Moon, Sun, Download, LogOut, Trash2, Tag, Target, Repeat, Trophy, Users, Globe } from 'lucide-react'
+import { Moon, Sun, Download, LogOut, Trash2, Tag, Target, Repeat, Trophy, Users, Globe, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -29,6 +29,7 @@ export default function SettingsPage() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [isDeleting, setIsDeleting] = useState(false)
+  const [isDeleteSuccess, setIsDeleteSuccess] = useState(false)
   const [user, setUser] = useState<User | null>(null)
   
   // States for delete confirmation
@@ -59,9 +60,22 @@ export default function SettingsPage() {
   const handleDelete = async () => {
     setIsDeleting(true)
     try {
-      await deleteAccount()
-      // Note: deleteAccount will redirect on success, so this might not run, but if it doesn't redirect we show toast
+      const res = await deleteAccount()
+      
+      if (res?.error) {
+        setIsDeleting(false)
+        toast.error(t('settings.delete_error', 'Gagal Menghapus'), { description: res.error })
+        return
+      }
+
+      setIsDeleteSuccess(true)
       toast.success(t('settings.account_deleted', 'Akun Dihapus'), { description: t('settings.account_deleted_desc', 'Data Anda telah dihapus secara permanen.') })
+      
+      // Tunggu 3 detik baru alihkan ke home
+      setTimeout(() => {
+        window.location.href = '/'
+      }, 3000)
+
     } catch (error) {
       console.error(error)
       setIsDeleting(false)
@@ -323,10 +337,19 @@ export default function SettingsPage() {
                     </AlertDialogCancel>
                     <AlertDialogAction 
                       onClick={handleDelete}
-                      className="rounded-[16px] font-bold bg-expense text-white hover:bg-red-600 disabled:opacity-50"
-                      disabled={isDeleting || !deleteChecked || deleteConfirmText !== (i18n.language === 'EN' ? 'delete account' : 'hapus akun')}
+                      className="rounded-[16px] font-bold bg-expense text-white hover:bg-red-600 disabled:opacity-80 transition-all flex items-center justify-center min-w-[140px]"
+                      disabled={isDeleting || isDeleteSuccess || !deleteChecked || deleteConfirmText !== (i18n.language === 'EN' ? 'delete account' : 'hapus akun')}
                     >
-                      {isDeleting ? t('settings.deleting', 'Menghapus...') : t('settings.yes_delete', 'Ya, hapus akun')}
+                      {isDeleteSuccess ? (
+                        t('settings.delete_success_btn', 'Berhasil! Mengalihkan...')
+                      ) : isDeleting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          {t('settings.deleting', 'Menghapus...')}
+                        </>
+                      ) : (
+                        t('settings.yes_delete', 'Ya, hapus akun')
+                      )}
                     </AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>

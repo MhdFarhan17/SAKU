@@ -81,7 +81,7 @@ export async function deleteAccount() {
   const { data: { user } } = await supabase.auth.getUser()
   
   if (!user) {
-    throw new Error('Not authenticated')
+    return { error: 'Not authenticated' }
   }
 
   // Use the admin client to delete the user
@@ -89,12 +89,12 @@ export async function deleteAccount() {
   const { error } = await adminAuthClient.auth.admin.deleteUser(user.id)
 
   if (error) {
-    throw new Error(error.message)
+    return { error: error.message }
   }
 
   // Sign out locally to clear cookies
   await supabase.auth.signOut()
-  redirect('/')
+  return { success: true }
 }
 
 export async function updateProfile(formData: FormData) {
