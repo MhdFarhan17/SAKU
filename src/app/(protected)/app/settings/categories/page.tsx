@@ -231,36 +231,41 @@ export default function CategoriesPage() {
               </div>
             </div>
 
-            <div className="mt-auto shrink-0 flex gap-3">
+            <div className="mt-auto shrink-0 flex flex-col gap-3">
+              <div className="flex gap-3">
+                <Button type="button" variant="outline" onClick={() => setIsOpen(false)} className="flex-1 h-12 rounded-[12px] font-bold border-border text-text-muted hover:text-text-main" disabled={isSubmitting}>
+                  {t('categories.cancel', 'Batal')}
+                </Button>
+                <Button type="submit" className="flex-1 h-12 rounded-[12px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black" disabled={isSubmitting}>
+                  {isSubmitting ? t('categories.saving', 'Menyimpan...') : t('categories.save_btn', 'Simpan Kategori')}
+                </Button>
+              </div>
+              
               {editId && (
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
                     <Button 
                       type="button"
-                      variant="outline"
-                      size="lg"
-                      className="rounded-[12px] border-expense text-expense hover:bg-expense hover:text-white font-bold bg-transparent"
+                      variant="ghost"
+                      className="w-full h-12 rounded-[12px] font-bold text-expense hover:bg-expense/10 hover:text-expense"
                     >
                       {t('categories.delete', 'Hapus')}
                     </Button>
                   </AlertDialogTrigger>
-                  <AlertDialogContent className="z-[110] rounded-[24px]">
+                  <AlertDialogContent className="rounded-[24px]">
                     <AlertDialogHeader>
                       <AlertDialogTitle className="text-expense">{t('categories.delete_confirm_title', 'Hapus kategori ini?')}</AlertDialogTitle>
                       <AlertDialogDescription>
                         {t('categories.delete_confirm_desc', 'Tindakan ini tidak dapat dibatalkan. Kategori ini akan dihapus dari daftar.')}
                       </AlertDialogDescription>
                     </AlertDialogHeader>
-                    <AlertDialogFooter>
-                      <AlertDialogCancel className="rounded-[12px]">{t('categories.cancel', 'Batal')}</AlertDialogCancel>
-                      <AlertDialogAction onClick={handleDelete} className="bg-expense text-white hover:bg-red-600 rounded-[12px]">{t('categories.delete_btn', 'Hapus Kategori')}</AlertDialogAction>
+                    <AlertDialogFooter className="flex flex-row items-center gap-3 mt-4 sm:mt-0">
+                      <AlertDialogCancel className="mt-0 flex-1 rounded-[12px] font-bold">{t('categories.cancel', 'Batal')}</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleDelete} className="flex-1 h-10 rounded-[12px] font-bold bg-expense text-white hover:bg-red-600 px-4 py-2 text-sm">{t('categories.delete_btn', 'Hapus Kategori')}</AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
                 </AlertDialog>
               )}
-              <Button type="submit" size="lg" className="flex-1 rounded-[12px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black" disabled={isSubmitting}>
-                {isSubmitting ? t('categories.saving', 'Menyimpan...') : t('categories.save_btn', 'Simpan Kategori')}
-              </Button>
             </div>
           </form>
         </SheetContent>

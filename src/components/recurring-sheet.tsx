@@ -257,15 +257,20 @@ export function GlobalRecurringSheet() {
             )}
           </div>
 
-          <div className="flex gap-4 mt-auto shrink-0 pt-4 pb-safe">
+          <div className="flex flex-col gap-3 mt-auto shrink-0 pt-4 pb-safe">
+            <div className="flex gap-3">
+              <Button type="button" variant="outline" size="lg" className="flex-1 rounded-[16px] h-14 font-bold border-border text-text-muted hover:text-text-main" disabled={isSubmitting} onClick={closeSheet}>
+                {t('recurring.cancel', 'Batal')}
+              </Button>
+              <Button type="submit" size="lg" className="flex-1 h-14 rounded-[16px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black shadow-sm" disabled={isSubmitting}>
+                {isSubmitting ? t('recurring.saving', 'Menyimpan...') : t('recurring.save_btn', 'Simpan')}
+              </Button>
+            </div>
             {isEditing && (
-              <Button type="button" variant="outline" size="lg" className="rounded-[16px] h-14 font-black border-red-500/20 text-red-500 hover:bg-red-500/10" disabled={isSubmitting} onClick={handleDelete}>
+              <Button type="button" variant="ghost" size="lg" className="w-full rounded-[16px] h-14 font-bold text-expense hover:bg-expense/10 hover:text-expense" disabled={isSubmitting} onClick={handleDelete}>
                 {t('recurring.delete', 'Hapus')}
               </Button>
             )}
-            <Button type="submit" size="lg" className="w-full h-14 rounded-[16px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black shadow-sm" disabled={isSubmitting}>
-              {isSubmitting ? t('recurring.saving', 'Menyimpan...') : t('recurring.save_btn', 'Simpan')}
-            </Button>
           </div>
         </form>
       </SheetContent>

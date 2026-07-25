@@ -270,18 +270,18 @@ function AddDebtForm({ defaultKind, onClose }: { defaultKind: 'payable' | 'recei
             </div>
           </div>
 
-          <div className="pt-4 flex items-center justify-end gap-3 border-t border-border/50 mt-4">
+          <div className="pt-4 flex items-center justify-end gap-3 border-t border-border/50 mt-4 w-full">
             <button 
               type="button" 
               onClick={onClose}
-              className="border border-red-500/20 text-red-500 font-black px-8 py-3 rounded-[16px] hover:bg-red-500/10 transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
+              className="flex-1 border border-border text-text-muted hover:text-text-main font-black py-3 rounded-[16px] hover:bg-surface-subtle transition-all duration-200 active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
             >
               {t('debts.cancel', 'Batal')}
             </button>
             <button 
               type="submit" 
               disabled={isPending}
-              className="bg-brand text-text-main font-black px-8 py-3 rounded-[16px] hover:bg-brand/90 transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
+              className="flex-1 bg-brand text-text-main font-black py-3 rounded-[16px] hover:bg-brand/90 transition-all duration-200 active:scale-95 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
             >
               {isPending ? t('debts.saving', 'Menyimpan...') : t('debts.save_data', 'Simpan Data')}
             </button>

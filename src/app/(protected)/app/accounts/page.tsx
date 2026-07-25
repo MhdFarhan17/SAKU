@@ -216,9 +216,14 @@ export default function AccountsPage() {
             </div>
 
             <div className="pt-4 pb-safe space-y-3 shrink-0">
-              <Button type="submit" className="w-full h-12 md:h-14 rounded-full font-black text-lg bg-brand text-[#0e0f0c] hover:bg-brand/90" disabled={isSubmitting}>
-                {isSubmitting ? '...' : t('accounts.save', 'Simpan Akun')}
-              </Button>
+              <div className="flex flex-row items-center gap-3">
+                <Button type="button" variant="outline" onClick={() => setIsOpen(false)} className="flex-1 h-12 md:h-14 rounded-[12px] font-bold border-border text-text-muted hover:text-text-main" disabled={isSubmitting}>
+                  {t('accounts.cancel', 'Batal')}
+                </Button>
+                <Button type="submit" className="flex-1 h-12 md:h-14 rounded-[12px] font-black text-base md:text-lg bg-brand text-[#0e0f0c] hover:bg-brand/90" disabled={isSubmitting}>
+                  {isSubmitting ? '...' : t('accounts.save', 'Simpan Akun')}
+                </Button>
+              </div>
               
               {editId && (
                 <AlertDialog>

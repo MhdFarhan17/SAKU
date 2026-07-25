@@ -263,37 +263,43 @@ export function GlobalTransactionSheet() {
             </div>
           </div>
 
-          <div className="flex gap-3 mt-auto shrink-0 pt-4 pb-safe">
+          <div className="flex flex-col gap-3 mt-auto shrink-0 pt-4 pb-safe">
+            <div className="flex gap-3">
+              <Button type="button" variant="outline" size="lg" className="flex-1 rounded-[16px] h-14 font-bold border-border text-text-muted hover:text-text-main" disabled={isSubmitting} onClick={closeSheet}>
+                {t('transactions.cancel', 'Batal')}
+              </Button>
+              <Button type="submit" size="lg" className="flex-1 h-14 rounded-[16px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black shadow-sm" disabled={isSubmitting}>
+                {isSubmitting ? t('transactions.saving', 'Menyimpan...') : (isEditing ? t('transactions.save_changes', 'Simpan Perubahan') : t('transactions.save_transaction', 'Simpan Transaksi'))}
+              </Button>
+            </div>
+            
             {isEditing && (
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button 
                     type="button" 
-                    variant="outline" 
+                    variant="ghost" 
                     size="lg" 
-                    className="rounded-[16px] border-expense text-expense hover:bg-expense hover:text-white font-bold h-14 px-6 bg-transparent" 
+                    className="w-full rounded-[16px] h-14 font-bold text-expense hover:bg-expense/10 hover:text-expense bg-transparent" 
                     disabled={isSubmitting}
                   >
                     {t('transactions.delete', 'Hapus')}
                   </Button>
                 </AlertDialogTrigger>
-                <AlertDialogContent className="z-[110] rounded-[24px]">
+                <AlertDialogContent className="rounded-[24px]">
                   <AlertDialogHeader>
                     <AlertDialogTitle className="text-expense">{t('transactions.delete_confirm_title', 'Hapus transaksi ini?')}</AlertDialogTitle>
                     <AlertDialogDescription>
                       {t('transactions.delete_confirm_desc', 'Anda akan menghapus transaksi ini secara permanen. Tindakan ini tidak dapat dibatalkan. Apakah Anda yakin?')}
                     </AlertDialogDescription>
                   </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel className="rounded-[12px]">{t('transactions.cancel', 'Batal')}</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleDelete} className="bg-expense text-white hover:bg-red-600 rounded-[12px]">{t('transactions.delete_btn', 'Hapus Transaksi')}</AlertDialogAction>
+                  <AlertDialogFooter className="flex flex-row items-center gap-3 mt-4 sm:mt-0">
+                    <AlertDialogCancel className="mt-0 flex-1 rounded-[12px] font-bold">{t('transactions.cancel', 'Batal')}</AlertDialogCancel>
+                    <AlertDialogAction onClick={handleDelete} className="flex-1 h-10 rounded-[12px] font-bold bg-expense text-white hover:bg-red-600 px-4 py-2 text-sm">{t('transactions.delete_btn', 'Hapus Transaksi')}</AlertDialogAction>
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
             )}
-            <Button type="submit" size="lg" className="flex-1 h-14 rounded-[16px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black shadow-sm" disabled={isSubmitting}>
-              {isSubmitting ? t('transactions.saving', 'Menyimpan...') : (isEditing ? t('transactions.save_changes', 'Simpan Perubahan') : t('transactions.save_transaction', 'Simpan Transaksi'))}
-            </Button>
           </div>
         </form>
       </SheetContent>

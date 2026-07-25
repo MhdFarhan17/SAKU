@@ -127,15 +127,20 @@ export function GlobalBudgetSheet() {
             </div>
           </div>
 
-          <div className="flex gap-4 mt-auto">
+          <div className="flex flex-col gap-3 mt-auto pb-safe">
+            <div className="flex gap-3">
+              <Button type="button" variant="outline" size="lg" className="flex-1 rounded-[12px] font-bold border-border text-text-muted hover:text-text-main" disabled={isSubmitting} onClick={closeSheet}>
+                {t('budgets.cancel', 'Batal')}
+              </Button>
+              <Button type="submit" size="lg" className="flex-1 rounded-[12px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black" disabled={isSubmitting}>
+                {isSubmitting ? t('budgets.saving', 'Menyimpan...') : t('budgets.save_budget', 'Simpan Anggaran')}
+              </Button>
+            </div>
             {existingBudget && (
-              <Button type="button" variant="outline" size="lg" className="rounded-[12px] font-black border-red-500/20 text-red-500 hover:bg-red-500/10" disabled={isSubmitting} onClick={handleDelete}>
+              <Button type="button" variant="ghost" size="lg" className="w-full rounded-[12px] font-bold text-expense hover:bg-expense/10 hover:text-expense" disabled={isSubmitting} onClick={handleDelete}>
                 {t('budgets.delete', 'Hapus')}
               </Button>
             )}
-            <Button type="submit" size="lg" className="w-full rounded-[12px] bg-brand text-[#0e0f0c] hover:bg-brand/90 font-black" disabled={isSubmitting}>
-              {isSubmitting ? t('budgets.saving', 'Menyimpan...') : t('budgets.save_budget', 'Simpan Anggaran')}
-            </Button>
           </div>
         </form>
       </SheetContent>
