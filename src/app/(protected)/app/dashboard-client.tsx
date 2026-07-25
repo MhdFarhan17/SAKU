@@ -11,6 +11,9 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { useTranslation } from 'react-i18next'
 import { normalizeIcon } from '@/lib/utils'
 import { getTranslatedCategoryName } from '@/features/categories/utils'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+import { toast } from 'sonner'
 
 interface DashboardClientProps {
   displayName: string
@@ -20,6 +23,22 @@ interface DashboardClientProps {
 
 export function DashboardClient({ displayName, totalBalance, recentTx }: DashboardClientProps) {
   const { t } = useTranslation()
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (searchParams.get('welcome') === 'true') {
+      toast.success(t('auth_page.login_success_title', 'Berhasil Login'), { 
+        description: t('dashboard.welcome_toast', 'Selamat datang kembali di Saku!'),
+        position: 'top-center',
+        duration: 4000
+      })
+      
+      // Clean up the URL
+      const newUrl = window.location.pathname
+      window.history.replaceState({}, '', newUrl)
+    }
+  }, [searchParams, t])
 
   return (
     <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-8 lg:space-y-10 pb-24">

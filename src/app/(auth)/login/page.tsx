@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { login } from '../actions'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -8,14 +8,16 @@ import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 import Image from 'next/image'
-import { ArrowLeft, Wallet, TrendingUp, Shield } from 'lucide-react'
+import { ArrowLeft, Wallet, TrendingUp, Shield, CheckCircle2, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function LoginForm() {
   const { t } = useTranslation()
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [showBridge, setShowBridge] = useState(false)
   const searchParams = useSearchParams()
   const router = useRouter()
   const registered = searchParams.get('registered') === 'true'
@@ -33,8 +35,11 @@ function LoginForm() {
       toast.error(t('auth_page.login_failed_title', 'Gagal Login'), { description: res.error })
       setLoading(false)
     } else if (res?.success) {
-      toast.success(t('auth_page.login_success_title', 'Berhasil Login'), { description: t('auth_page.login_success_desc', 'Selamat Datang Kembali :)') })
-      router.push('/app')
+      // Show loading bridge, wait a moment, then push with welcome parameter
+      setShowBridge(true)
+      setTimeout(() => {
+        router.push('/app?welcome=true')
+      }, 1500) // Give the bridge time to animate and show
     }
   }
 
@@ -173,6 +178,39 @@ function LoginForm() {
           </div>
         </div>
       </div>
+      
+      {/* LOADING BRIDGE OVERLAY */}
+      <AnimatePresence>
+        {showBridge && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#F6F8F5]/95 backdrop-blur-md"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              transition={{ delay: 0.1, type: "spring", stiffness: 200, damping: 20 }}
+              className="flex flex-col items-center justify-center text-center max-w-sm p-8"
+            >
+              <div className="relative mb-6">
+                <div className="absolute inset-0 bg-[#9fe870]/20 rounded-full blur-xl animate-pulse" />
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl shadow-black/5 relative z-10">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 rounded-full border-4 border-transparent border-t-[#9fe870] border-r-[#9fe870]/30"
+                  />
+                  <CheckCircle2 className="w-10 h-10 text-[#0e0f0c]" />
+                </div>
+              </div>
+              <h3 className="text-2xl font-black text-[#0e0f0c] mb-2">{t('auth_page.login_success_title', 'Berhasil Login!')}</h3>
+              <p className="text-[#868685] font-medium">{t('auth_page.login_bridge_desc', 'Sedang memuat dasbor keuangan Anda...')}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
