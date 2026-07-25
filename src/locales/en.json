@@ -224,6 +224,7 @@
     "login_failed_title": "Login Failed",
     "login_success_title": "Login Successful",
     "login_success_desc": "Welcome Back :)",
+    "login_bridge_desc": "Loading your financial dashboard...",
     "signup_failed_title": "Signup Failed",
     "signup_success_title": "Signup Successful",
     "forgot_title": "Forgot Password?",
@@ -256,6 +257,7 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Hello, Welcome back {{name}} 👋",
+    "welcome_toast": "Welcome back to Saku!",
     "logout_btn": "Log Out",
     "logout_confirm_title": "Log out from Saku?",
     "logout_confirm_desc": "Are you sure you want to log out of your current session? You will need to log back in to see your financial records.",

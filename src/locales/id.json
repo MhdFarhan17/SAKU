@@ -253,6 +253,7 @@
     "login_failed_title": "Gagal Login",
     "login_success_title": "Berhasil Login",
     "login_success_desc": "Selamat Datang Kembali :)",
+    "login_bridge_desc": "Sedang memuat dasbor keuangan Anda...",
     "signup_failed_title": "Gagal Daftar",
     "signup_success_title": "Berhasil Daftar",
     "forgot_title": "Lupa Password?",
@@ -285,6 +286,7 @@
   "dashboard": {
     "title": "Dasbor",
     "welcome": "Halo, Selamat datang kembali {{name}} 👋",
+    "welcome_toast": "Selamat datang kembali di Saku!",
     "logout_btn": "Keluar",
     "logout_confirm_title": "Keluar dari Saku?",
     "logout_confirm_desc": "Apakah Anda yakin ingin keluar dari sesi Anda saat ini? Anda harus masuk kembali untuk melihat catatan keuangan Anda.",
