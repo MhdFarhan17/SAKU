@@ -49,9 +49,9 @@ export function MarketingNavbar() {
           : "bg-transparent"
       )}
     >
-      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-12 h-20 md:h-24 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-12 h-20 md:h-24 flex items-center justify-between relative">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+        <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity relative z-10">
           <Image 
             src="/logos/logo.png" 
             alt="Saku Logo" 
@@ -63,8 +63,8 @@ export function MarketingNavbar() {
           <span className="text-[28px] font-black text-[#0e0f0c] tracking-[-0.04em]">Saku</span>
         </Link>
 
-        {/* Desktop Nav with Animated Pill */}
-        <nav className="hidden md:flex items-center gap-2 bg-[#ffffff] p-1.5 rounded-full shadow-sm border border-[#0e0f0c]/10">
+        {/* Desktop Nav without Pill, with Animated Underline */}
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-10">
           {navLinks.map((link) => {
             const isActive = pathname === link.href
             return (
@@ -72,25 +72,24 @@ export function MarketingNavbar() {
                 key={link.name}
                 href={link.href} 
                 className={cn(
-                  "relative px-6 py-2.5 text-sm font-bold rounded-full transition-colors",
-                  isActive ? "text-[#0e0f0c]" : "text-[#737e8d] hover:text-[#0e0f0c]"
+                  "py-2 inline-block transition-colors relative group text-base",
+                  isActive ? "text-[#9fe870] font-black" : "text-[#737e8d] hover:text-[#9fe870] font-bold"
                 )}
               >
-                {isActive && (
-                  <motion.div
-                    layoutId="nav-active-pill"
-                    className="absolute inset-0 bg-[#F6F8F5] rounded-full -z-10 border border-[#e2e6eb]"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{link.name}</span>
+                <span>{link.name}</span>
+                <span 
+                  className={cn(
+                    "absolute -bottom-1 left-0 h-[2px] bg-[#9fe870] transition-all duration-300",
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  )} 
+                />
               </Link>
             )
           })}
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2 relative z-10">
           {/* Language Switcher */}
           <div className="relative">
             <button 
