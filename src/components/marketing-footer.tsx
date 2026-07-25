@@ -13,9 +13,9 @@ export function MarketingFooter() {
       {/* Ambient Glow */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#9fe870]/5 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
       
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 pb-4 relative z-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-12 md:pt-24 pb-6 md:pb-4 relative z-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8 border-b border-[#262C36] pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 border-b border-[#262C36] pb-12">
           
           {/* ZONA 1: Brand & Social */}
           <div className="col-span-1 md:col-span-6 space-y-8 pr-0 md:pr-12">
@@ -27,7 +27,7 @@ export function MarketingFooter() {
                 height={40}
                 className="object-contain group-hover:rotate-12 transition-transform duration-500"
               />
-              <span className="text-4xl font-black text-[#ffffff] tracking-[-0.04em]">Saku</span>
+              <span className="text-3xl md:text-4xl font-black text-[#ffffff] tracking-[-0.04em]">Saku</span>
             </Link>
             <p className="text-xl font-bold text-gray-400 max-w-sm leading-relaxed">
               {t('footer.slogan', 'Catat uangmu, lihat ke mana perginya. Kendali penuh privasi di tangan Anda.')}
@@ -53,27 +53,27 @@ export function MarketingFooter() {
           {/* ZONA 2: Produk */}
           <div className="col-span-1 md:col-span-3 space-y-8">
             <h4 className="font-black text-[#ffffff] uppercase tracking-wider text-sm">{t('footer.product', 'Produk')}</h4>
-            <ul className="space-y-5 text-base font-medium">
+            <ul className="space-y-2 md:space-y-5 text-base font-medium">
               <li>
-                <Link href="/features" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/features" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.features', 'Fitur')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/about" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.about', 'Tentang')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/signup" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.signup_free', 'Daftar secara gratis')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href="/login" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/login" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.login', 'Masuk')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
@@ -84,21 +84,21 @@ export function MarketingFooter() {
           {/* ZONA 3: Legal dan bantuan */}
           <div className="col-span-1 md:col-span-3 space-y-8">
             <h4 className="font-black text-[#ffffff] uppercase tracking-wider text-sm">{t('footer.support_legal', 'Bantuan & Legal')}</h4>
-            <ul className="space-y-5 text-base font-medium">
+            <ul className="space-y-2 md:space-y-5 text-base font-medium">
               <li>
-                <Link href="/support" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/support" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.help_center', 'Pusat Bantuan')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/privacy" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.privacy', 'Kebijakan Privasi')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-400 hover:text-[#9fe870] transition-colors relative group">
+                <Link href="/terms" className="py-2 inline-block text-gray-400 hover:text-[#9fe870] transition-colors relative group">
                   <span>{t('footer.terms', 'Ketentuan Layanan')}</span>
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#9fe870] transition-all duration-300 group-hover:w-full"></span>
                 </Link>

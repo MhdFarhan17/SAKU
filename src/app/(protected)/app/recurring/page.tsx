@@ -43,15 +43,15 @@ export default function RecurringPage() {
     await updateBill({ id: bill.id, updates: { next_due_date: nextDueDate } })
   }
 
-  if (isLoading) return <div className="p-6 font-medium animate-pulse">{t('recurring.loading', 'Memuat catatan rutin...')}</div>
+  if (isLoading) return <div className="p-4 md:p-6 font-medium animate-pulse">{t('recurring.loading', 'Memuat catatan rutin...')}</div>
 
   const todayStr = new Date().toISOString().split('T')[0]
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-10 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-10 pb-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main">{t('recurring.title', 'Catatan Rutin')}</h1>
+          <h1 className="text-2xl md:text-3xl font-black text-text-main">{t('recurring.title', 'Catatan Rutin')}</h1>
           <p className="text-text-muted font-medium mt-1">{t('recurring.desc', 'Kelola tagihan, langganan, atau gaji rutin Anda.')}</p>
         </div>
         <Button onClick={() => openSheet()} className="hidden md:flex font-bold rounded-xl h-11 px-6 bg-[#9fe870] text-[#0e0f0c] hover:bg-[#85c95a]">
@@ -89,7 +89,7 @@ export default function RecurringPage() {
                 isOverdue ? 'border-red-500' : isDueToday ? 'border-brand' : 'border-transparent hover:border-brand/50'
               }`}
             >
-              <CardContent className="p-5">
+              <CardContent className="p-4 md:p-5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div 

@@ -17,7 +17,7 @@ export default function DebtsPage() {
 
   if (isLoading) {
     return (
-      <div className="p-6 max-w-5xl mx-auto space-y-6 pb-24">
+      <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 pb-24">
         <div className="h-10 w-48 bg-surface animate-pulse rounded-[12px]"></div>
         <div className="h-14 w-full bg-surface animate-pulse rounded-[16px]"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -31,10 +31,10 @@ export default function DebtsPage() {
   const totalRemaining = filteredDebts.reduce((sum: number, d: any) => sum + (d.status === 'active' ? d.remaining_amount_minor : 0), 0)
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-8 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-8 pb-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main flex items-center gap-3">
+          <h1 className="text-2xl md:text-3xl font-black text-text-main flex items-center gap-3">
             <Users className="w-8 h-8 text-blue-500" /> {t('debts.title', 'Hutang & Piutang')}
           </h1>
           <p className="text-text-muted font-medium mt-1">{t('debts.desc', 'Kelola janji finansial Anda dengan tenang.')}</p>
@@ -67,7 +67,7 @@ export default function DebtsPage() {
         <AddDebtForm defaultKind={activeTab} onClose={() => setShowAddForm(false)} />
       )}
 
-      <div className="bg-surface rounded-[24px] p-6 flex items-center justify-between shadow-sm border border-border/50">
+      <div className="bg-surface rounded-[24px] p-4 md:p-6 flex items-center justify-between shadow-sm border border-border/50">
         <div>
           <p className="text-sm font-bold text-text-muted uppercase tracking-wider mb-1">
             {activeTab === 'payable' ? t('debts.total_payable', 'Total Hutang Belum Dibayar') : t('debts.total_receivable', 'Total Piutang Belum Ditagih')}
@@ -101,7 +101,7 @@ function DebtCard({ debt }: { debt: any }) {
 
   return (
     <Card className={`border-none rounded-[24px] shadow-sm relative overflow-hidden ${debt.status === 'paid' ? 'bg-surface-subtle opacity-70' : 'bg-surface'}`}>
-      <CardContent className="p-6 relative z-10 flex flex-col h-full">
+      <CardContent className="p-4 md:p-6 relative z-10 flex flex-col h-full">
         <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="font-bold text-xl text-text-main">{debt.contact_name}</h3>
@@ -211,7 +211,7 @@ function AddDebtForm({ defaultKind, onClose }: { defaultKind: 'payable' | 'recei
         </h3>
       </div>
       
-      <CardContent className="p-6">
+      <CardContent className="p-4 md:p-6">
         <form onSubmit={handleSubmit} className="space-y-5">
           
           <div className="flex bg-surface-subtle p-1 rounded-[16px] w-full md:w-1/2">

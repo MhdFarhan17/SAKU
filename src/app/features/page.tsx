@@ -35,7 +35,7 @@ export default function FeaturesPage() {
       <main className="flex-grow w-full">
         
         {/* HERO HEADER */}
-        <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 px-6 lg:px-12 flex flex-col items-center text-center">
+        <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 px-4 md:px-6 lg:px-12 flex flex-col items-center text-center">
           {/* Decorative Gradient Blob */}
           <div className="absolute top-20 right-1/4 w-[400px] h-[400px] bg-[#9fe870]/30 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" />
           <div className="absolute top-40 left-1/4 w-[300px] h-[300px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none -z-10" />
@@ -47,12 +47,12 @@ export default function FeaturesPage() {
             className="max-w-[1400px] mx-auto text-center space-y-8 relative z-10"
           >
 
-            <motion.h1 variants={fadeInUp} className="text-[48px] md:text-[64px] lg:text-[72px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c] max-w-4xl mx-auto">
+            <motion.h1 variants={fadeInUp} className="text-[40px] md:text-[64px] lg:text-[72px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c] max-w-4xl mx-auto">
               {t('features_page.hero_title_1', 'Semua fitur,')} <br className="hidden md:block"/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">{t('features_page.hero_title_2', 'nol kompleksitas.')}</span>
             </motion.h1>
             
-            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-[#454745] max-w-2xl mx-auto leading-relaxed">
+            <motion.p variants={fadeInUp} className="text-lg md:text-2xl text-[#454745] max-w-2xl mx-auto leading-relaxed">
               {t('features_page.hero_subtitle', 'Saku dirancang agar Anda bisa langsung menguasai arus kas Anda sejak detik pertama aplikasi dibuka.')}
             </motion.p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function FeaturesPage() {
         {/* FEATURE SECTIONS */}
         
         {/* Feature 1: Fast Input & Central Dashboard */}
-        <section className="py-24 px-6 lg:px-12 relative">
+        <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12 relative">
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <motion.div 
               initial={{ opacity: 0, x: -40 }}
@@ -73,10 +73,10 @@ export default function FeaturesPage() {
               <div className="w-16 h-16 bg-[#0e0f0c] text-[#9fe870] rounded-[16px] flex items-center justify-center shadow-lg">
                 <Smartphone className="w-8 h-8" />
               </div>
-              <h2 className="text-[40px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em]">
+              <h2 className="text-[32px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em]">
                 {t('features_page.feat_1_title_1', 'Satu layar.')} <br/> {t('features_page.feat_1_title_2', 'Input kilat.')}
               </h2>
-              <p className="text-xl md:text-2xl text-[#454745] max-w-xl leading-relaxed">
+              <p className="text-lg md:text-2xl text-[#454745] max-w-xl leading-relaxed">
                 {t('features_page.feat_1_desc', 'Tidak ada form panjang. Cukup ketik nominal, pilih kategori, dan selesai dalam 3 detik. Semua saldo dari berbagai dompet atau bank Anda terangkum di satu Dasbor pusat.')}
               </p>
               <ul className="space-y-4 pt-4">
@@ -120,7 +120,7 @@ export default function FeaturesPage() {
         </section>
 
         {/* Feature 2: Analytics (Alternating Layout) */}
-        <section className="py-24 px-6 lg:px-12 bg-white/50">
+        <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12 bg-white/50">
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-24">
             <motion.div 
               initial={{ opacity: 0, x: 40 }}
@@ -132,10 +132,10 @@ export default function FeaturesPage() {
               <div className="w-16 h-16 bg-[#9fe870] text-[#0e0f0c] rounded-[16px] flex items-center justify-center shadow-lg">
                 <PieChart className="w-8 h-8" />
               </div>
-              <h2 className="text-[40px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em]">
+              <h2 className="text-[32px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em]">
                 {t('features_page.feat_2_title_1', 'Laporan tajam.')} <br/> {t('features_page.feat_2_title_2', 'Mudah dicerna.')}
               </h2>
-              <p className="text-xl md:text-2xl text-[#454745] max-w-xl leading-relaxed">
+              <p className="text-lg md:text-2xl text-[#454745] max-w-xl leading-relaxed">
                 {t('features_page.feat_2_desc', 'Pahami pola kebiasaan belanja Anda melalui visualisasi data interaktif. Pantau tren arus kas bulanan tanpa perlu membuat spreadsheet Excel yang membosankan.')}
               </p>
             </motion.div>
@@ -170,12 +170,12 @@ export default function FeaturesPage() {
         </section>
 
         {/* Feature 3: Target Tabungan & Manajemen Hutang (Grid Split) */}
-        <section className="py-24 px-6 lg:px-12">
+        <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12">
           <div className="max-w-[1400px] mx-auto text-center mb-16">
-            <h2 className="text-[40px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-6">
+            <h2 className="text-[32px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-6">
               {t('features_page.feat_3_title', 'Mulai capai kebebasan finansial.')}
             </h2>
-            <p className="text-xl text-[#454745] max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-[#454745] max-w-2xl mx-auto">
               {t('features_page.feat_3_desc', 'Fitur khusus untuk membantu Anda menabung demi impian, dan melunasi hutang tepat waktu.')}
             </p>
           </div>
@@ -269,7 +269,7 @@ export default function FeaturesPage() {
         </section>
 
         {/* Feature 4: Budget & Security (Bento Boxes) */}
-        <section className="py-24 px-6 lg:px-12 bg-[#ffffff]">
+        <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12 bg-[#ffffff]">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <motion.div 
@@ -324,22 +324,22 @@ export default function FeaturesPage() {
         </section>
 
         {/* CTA SECTION */}
-        <section className="py-24 md:py-32 px-6 lg:px-12">
+        <section className="py-16 md:py-32 px-4 md:px-6 lg:px-12">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-[1200px] mx-auto bg-[#0e0f0c] text-white rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl"
+            className="max-w-[1200px] mx-auto bg-[#0e0f0c] text-white rounded-[32px] md:rounded-[40px] p-8 md:p-20 text-center relative overflow-hidden shadow-2xl"
           >
             {/* Ambient Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#9fe870]/20 rounded-full blur-[100px] pointer-events-none" />
             
             <div className="relative z-10 space-y-8">
-              <h2 className="text-[48px] md:text-[64px] lg:text-[80px] leading-[1.05] font-black tracking-[-0.04em] text-white">
+              <h2 className="text-[36px] md:text-[64px] lg:text-[80px] leading-[1.05] font-black tracking-[-0.04em] text-white">
               {t('features_page.cta_title_1', 'Kendali penuh,')} <br/> {t('features_page.cta_title_2', 'mulai dari sekarang.')}
             </h2>
-            <p className="text-2xl text-gray-400 font-medium">
+            <p className="text-lg md:text-2xl text-gray-400 font-medium">
               {t('features_page.cta_desc', 'Berhenti menebak-nebak ke mana uang Anda pergi. Ratusan pengguna telah beralih ke Saku.')}
             </p>
               <div className="pt-8">

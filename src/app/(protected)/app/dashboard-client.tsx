@@ -22,11 +22,11 @@ export function DashboardClient({ displayName, totalBalance, recentTx }: Dashboa
   const { t } = useTranslation()
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-10 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-8 lg:space-y-10 pb-24">
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main">{t('dashboard.title', 'Dasbor')}</h1>
-          <p className="text-text-muted font-medium mt-1">{t('dashboard.welcome', 'Halo, Selamat datang kembali {{name}} 👋', { name: displayName })}</p>
+          <h1 className="text-2xl md:text-3xl font-black text-text-main">{t('dashboard.title', 'Dasbor')}</h1>
+          <p className="text-text-muted font-medium mt-1 text-sm md:text-base">{t('dashboard.welcome', 'Halo, Selamat datang kembali {{name}} 👋', { name: displayName })}</p>
         </div>
         <div className="md:hidden">
           <AlertDialog>

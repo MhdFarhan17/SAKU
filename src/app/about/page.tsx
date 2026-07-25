@@ -25,7 +25,7 @@ export default function AboutPage() {
       <main className="flex-grow w-full">
         
         {/* HERO HEADER */}
-        <section ref={heroRef} className="relative min-h-[90vh] flex flex-col justify-center px-6 lg:px-12 overflow-hidden pt-32 pb-20">
+        <section ref={heroRef} className="relative min-h-[90vh] flex flex-col justify-center px-4 md:px-6 lg:px-12 overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#9fe870]/30 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" />
           <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#0e0f0c 2px, transparent 2px)', backgroundSize: '48px 48px' }} />
           
@@ -40,13 +40,13 @@ export default function AboutPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-[#454745]">{t('about_page.about_badge', 'Tentang Kami')}</span>
               </div>
               
-              <h1 className="text-[56px] md:text-[80px] lg:text-[96px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
+              <h1 className="text-[44px] md:text-[80px] lg:text-[96px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
                 {t('about_page.about_title_1', 'Transparansi')} <br/>
                 <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 pb-2">
                   {t('about_page.about_title_2', 'di atas segalanya.')}
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-[#454745] max-w-xl leading-relaxed font-medium">
+              <p className="text-lg md:text-2xl text-[#454745] max-w-xl leading-relaxed font-medium">
                 {t('about_page.about_subtitle', 'Saku lahir dengan misi sederhana yaitu memberikan Anda kemudahan dalam melacak arah uang, tanpa mengorbankan privasi sedikitpun.')}
               </p>
             </motion.div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </section>
 
         {/* STORY SECTION - STICKY SCROLL */}
-        <section className="bg-white py-32 px-6 lg:px-12 relative border-t border-[#e2e6eb]">
+        <section className="bg-white py-16 md:py-32 px-4 md:px-6 lg:px-12 relative border-t border-[#e2e6eb]">
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
             
             {/* Sticky Left */}
@@ -95,7 +95,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="text-[48px] md:text-[64px] leading-[1.05] font-black tracking-[-0.03em] text-[#0e0f0c]"
+                className="text-[36px] md:text-[64px] leading-[1.05] font-black tracking-[-0.03em] text-[#0e0f0c]"
               >
                 {t('about_page.story_title', 'Berawal dari sebuah rasa frustrasi.')}
               </motion.h2>
@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
             
             {/* Scrolling Right */}
-            <div className="lg:w-1/2 space-y-12 text-xl md:text-2xl text-[#454745] leading-relaxed font-medium">
+            <div className="lg:w-1/2 space-y-10 md:space-y-12 text-lg md:text-2xl text-[#454745] leading-relaxed font-medium">
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +146,7 @@ export default function AboutPage() {
         </section>
 
         {/* BENTO GRID VALUES SECTION */}
-        <section className="bg-[#0B0D11] py-32 px-6 lg:px-12 relative overflow-hidden">
+        <section className="bg-[#0B0D11] py-16 md:py-32 px-4 md:px-6 lg:px-12 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           
           <div className="max-w-[1400px] mx-auto space-y-20 relative z-10">
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-[48px] md:text-[72px] leading-[1.05] font-black tracking-[-0.03em] text-[#ffffff]"
+                className="text-[36px] md:text-[72px] leading-[1.05] font-black tracking-[-0.03em] text-[#ffffff]"
               >
                 <Trans i18nKey="about_page.pillar_title" components={{ 1: <span className="text-[#9fe870]" /> }}>
                   Tiga pilar dasar <br className="md:hidden" /><span className="text-[#9fe870]">Saku.</span>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
               >
                 {t('about_page.pillar_subtitle', 'Prinsip operasional kami yang tidak bisa diganggu gugat. Dibangun untuk Anda, berpihak pada Anda.')}
               </motion.p>

@@ -18,7 +18,7 @@ export default function GoalsPage() {
 
   if (isLoading) {
     return (
-      <div className="p-6 max-w-5xl mx-auto space-y-6 pb-24">
+      <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 pb-24">
         <div className="h-10 w-48 bg-surface animate-pulse rounded-[12px]"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="h-48 bg-surface animate-pulse rounded-[24px]"></div>
@@ -29,10 +29,10 @@ export default function GoalsPage() {
   }
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-8 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-8 pb-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main flex items-center gap-3">
+          <h1 className="text-2xl md:text-3xl font-black text-text-main flex items-center gap-3">
             <Trophy className="w-8 h-8 text-yellow-500" /> {t('goals.title', 'Target Tabungan')}
           </h1>
           <p className="text-text-muted font-medium mt-1">{t('goals.desc', 'Capai impian finansial Anda satu per satu.')}</p>
@@ -95,7 +95,7 @@ function GoalCard({ goal }: { goal: any }) {
       {percentage >= 100 && (
         <div className="absolute inset-0 bg-green-500/5 pointer-events-none z-0" />
       )}
-      <CardContent className="p-6 relative z-10 flex flex-col h-full">
+      <CardContent className="p-4 md:p-6 relative z-10 flex flex-col h-full">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-[16px] flex items-center justify-center text-2xl shadow-sm border border-border" style={{ backgroundColor: `${goal.color}15` }}>
@@ -287,7 +287,7 @@ function AddGoalForm({ onClose }: { onClose: () => void }) {
         <button onClick={onClose} className="text-text-muted hover:text-text-main font-bold text-sm">{t('goals.close', 'Tutup')}</button>
       </div>
       
-      <CardContent className="p-6">
+      <CardContent className="p-4 md:p-6">
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="space-y-1.5">

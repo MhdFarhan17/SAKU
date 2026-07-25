@@ -106,7 +106,7 @@ export default function SupportPage() {
                 <div className="absolute top-40 left-1/4 w-[300px] h-[300px] bg-blue-400/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
                 <motion.div initial="hidden" animate="visible" variants={staggerContainer} className="max-w-[1400px] mx-auto text-center space-y-8 relative z-10 w-full">
-                  <motion.h1 variants={fadeInUp} className="text-[40px] md:text-[56px] lg:text-[64px] leading-[1.1] font-black tracking-[-0.04em] text-[#0e0f0c] max-w-5xl mx-auto">
+                  <motion.h1 variants={fadeInUp} className="text-4xl sm:text-[40px] md:text-[56px] lg:text-[64px] leading-[1.1] font-black tracking-[-0.04em] text-[#0e0f0c] max-w-5xl mx-auto">
                     {t('support_page.hero_title_1', 'Ada yang bisa ')}<span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">{t('support_page.hero_title_2', 'kami bantu?')}</span><br className="hidden md:block"/>
                     {t('support_page.hero_title_3', 'atau ada yang ingin Anda ketahui?')}
                   </motion.h1>
@@ -142,8 +142,8 @@ export default function SupportPage() {
               <section className="py-24 px-6 lg:px-12 relative z-10 -mt-12">
                 <div className="max-w-[1400px] mx-auto">
                   <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div onClick={() => openCategory('memulai')} className="bg-white p-8 rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                      <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div onClick={() => openCategory('memulai')} className="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-100 text-blue-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <Book className="w-7 h-7" />
                       </div>
                       <h3 className="text-xl font-black mb-3">{t('support_page.cat_1_title', 'Memulai Saku')}</h3>
@@ -155,8 +155,8 @@ export default function SupportPage() {
                       </span>
                     </div>
 
-                    <div onClick={() => openCategory('transaksi')} className="bg-white p-8 rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                      <div className="w-14 h-14 bg-green-100 text-green-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div onClick={() => openCategory('transaksi')} className="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-green-100 text-green-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <Wallet className="w-7 h-7" />
                       </div>
                       <h3 className="text-xl font-black mb-3">{t('support_page.cat_2_title', 'Transaksi & Anggaran')}</h3>
@@ -168,8 +168,8 @@ export default function SupportPage() {
                       </span>
                     </div>
 
-                    <div onClick={() => openCategory('target')} className="bg-white p-8 rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                      <div className="w-14 h-14 bg-purple-100 text-purple-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div onClick={() => openCategory('target')} className="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-purple-100 text-purple-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <Target className="w-7 h-7" />
                       </div>
                       <h3 className="text-xl font-black mb-3">{t('support_page.cat_3_title', 'Target & Hutang')}</h3>
@@ -181,8 +181,8 @@ export default function SupportPage() {
                       </span>
                     </div>
 
-                    <div onClick={() => openCategory('akun')} className="bg-white p-8 rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
-                      <div className="w-14 h-14 bg-red-100 text-red-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div onClick={() => openCategory('akun')} className="bg-white p-6 md:p-8 rounded-[24px] md:rounded-[32px] border border-[#e2e6eb] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-red-100 text-red-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <Shield className="w-7 h-7" />
                       </div>
                       <h3 className="text-xl font-black mb-3">{t('support_page.cat_4_title', 'Akun & Keamanan')}</h3>
@@ -198,19 +198,19 @@ export default function SupportPage() {
               </section>
               
               {/* DIRECT SUPPORT CTA */}
-              <section className="py-24 px-6 lg:px-12">
-                <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-[1400px] mx-auto bg-[#0e0f0c] text-white rounded-[40px] p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden shadow-2xl">
+              <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-12">
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-[1400px] mx-auto bg-[#0e0f0c] text-white rounded-[32px] md:rounded-[40px] p-8 md:p-12 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 relative overflow-hidden shadow-2xl">
                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#9fe870]/20 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-                  <div className="relative z-10 max-w-2xl space-y-6">
+                  <div className="relative z-10 max-w-2xl space-y-4 md:space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
                     <div className="w-16 h-16 bg-white/10 text-[#9fe870] rounded-[24px] flex items-center justify-center backdrop-blur-md">
                       <MessageCircle className="w-8 h-8" />
                     </div>
-                    <h2 className="text-[40px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em]">{t('support_page.support_cta_title', 'Masih butuh panduan?')}</h2>
-                    <p className="text-xl md:text-2xl text-[#a4a5a3] font-medium">{t('support_page.support_cta_desc', 'Jangan khawatir. Tim teknis ahli kami siap membantu setiap permasalahan Anda 24/7.')}</p>
+                    <h2 className="text-3xl sm:text-[40px] md:text-[56px] leading-[1.1] font-black tracking-[-0.03em]">{t('support_page.support_cta_title', 'Masih butuh panduan?')}</h2>
+                    <p className="text-lg sm:text-xl md:text-2xl text-[#a4a5a3] font-medium">{t('support_page.support_cta_desc', 'Jangan khawatir. Tim teknis ahli kami siap membantu setiap permasalahan Anda 24/7.')}</p>
                   </div>
                   <div className="relative z-10 shrink-0 w-full md:w-auto">
-                    <Button asChild className="w-full md:w-auto h-20 px-16 text-2xl rounded-full bg-[#9fe870] hover:bg-[#cdffad] text-[#0e0f0c] font-black shadow-2xl shadow-[#9fe870]/20 hover:scale-105 active:scale-95 transition-all group border-none">
-                      <a href="mailto:farhan@mdfarhan.site">{t('support_page.support_cta_btn', 'Tanya Langsung')} <ChevronRight className="w-8 h-8 ml-2 group-hover:translate-x-1 transition-transform" /></a>
+                    <Button asChild className="w-full md:w-auto h-16 md:h-20 px-8 md:px-16 text-xl md:text-2xl rounded-full bg-[#9fe870] hover:bg-[#cdffad] text-[#0e0f0c] font-black shadow-2xl shadow-[#9fe870]/20 hover:scale-105 active:scale-95 transition-all group border-none">
+                      <a href="mailto:farhan@mdfarhan.site">{t('support_page.support_cta_btn', 'Tanya Langsung')} <ChevronRight className="w-6 h-6 md:w-8 md:h-8 ml-2 group-hover:translate-x-1 transition-transform" /></a>
                     </Button>
                   </div>
                 </motion.div>
@@ -315,7 +315,7 @@ export default function SupportPage() {
                 <article className="flex-1 min-w-0 bg-white p-8 md:p-12 rounded-[32px] border border-[#e2e6eb] shadow-sm">
                   {activeArticle ? (
                     <>
-                      <h1 className="text-3xl md:text-[40px] font-black leading-tight mb-8 text-[#0e0f0c]">
+                      <h1 className="text-2xl md:text-3xl lg:text-[40px] font-black leading-tight mb-6 md:mb-8 text-[#0e0f0c]">
                         {activeArticle.title}
                       </h1>
                       <div className="space-y-6 text-lg text-[#454745] leading-relaxed">

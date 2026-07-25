@@ -113,10 +113,10 @@ export default function TransactionsPage() {
   }
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-10 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-10 pb-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main">{t('transactions.title', 'Transaksi')}</h1>
+          <h1 className="text-2xl md:text-3xl font-black text-text-main">{t('transactions.title', 'Transaksi')}</h1>
           <p className="text-text-muted font-medium mt-1">{t('transactions.desc', 'Semua catatan pemasukan dan pengeluaran Anda.')}</p>
         </div>
         <Button onClick={() => openSheet('expense')} className="hidden md:flex font-bold rounded-xl h-11 px-6 bg-[#9fe870] text-[#0e0f0c] hover:bg-[#85c95a]">
@@ -200,7 +200,7 @@ export default function TransactionsPage() {
         </div>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-6 md:space-y-8">
         {sortedDates.length === 0 && (
           <div className="text-center p-12 bg-surface rounded-[24px] shadow-sm border-none mt-8">
             <div className="w-16 h-16 bg-surface-subtle rounded-full flex items-center justify-center mx-auto mb-4">
@@ -232,7 +232,7 @@ export default function TransactionsPage() {
                     <div 
                       key={tx.id} 
                       onClick={() => openSheet(tx.kind as any, tx.id)}
-                      className="p-4 flex items-center justify-between hover:bg-surface-subtle transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                      className="p-3 md:p-4 flex items-center justify-between hover:bg-surface-subtle transition-all duration-200 cursor-pointer active:scale-[0.98]"
                     >
                       <div className="flex items-center gap-4">
                         <div className={`w-12 h-12 rounded-[16px] flex items-center justify-center font-bold shrink-0 ${iconBg}`}>

@@ -86,7 +86,7 @@ export default function SettingsPage() {
   if (!mounted) return null
 
   return (
-    <div className="p-6 max-w-2xl mx-auto space-y-8 pb-24">
+    <div className="p-4 md:p-6 max-w-2xl mx-auto space-y-6 md:space-y-8 pb-24">
       <div>
         <h1 className="text-3xl font-black text-text-main">{t('settings.title', 'Pengaturan')}</h1>
         <p className="text-text-muted mt-1">{t('settings.desc', 'Kelola preferensi dan data Anda.')}</p>
@@ -144,22 +144,22 @@ export default function SettingsPage() {
                   <div className="text-xs text-text-muted mt-0.5">{t('settings.appearance_desc', 'Pilih tema tampilan')}</div>
                 </div>
               </div>
-              <div className="flex bg-surface-subtle p-1 rounded-xl shrink-0 border border-border/50">
+              <div className="flex bg-surface-subtle p-1 rounded-xl shrink-0 border border-border/50 w-full sm:w-auto">
                 <button 
                   onClick={() => setTheme('light')}
-                  className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${theme === 'light' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
+                  className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${theme === 'light' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
                 >
                   Light
                 </button>
                 <button 
                   onClick={() => setTheme('dark')}
-                  className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${theme === 'dark' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
+                  className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${theme === 'dark' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
                 >
                   Dark
                 </button>
                 <button 
                   onClick={() => setTheme('system')}
-                  className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${theme === 'system' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
+                  className={`flex-1 sm:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${theme === 'system' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
                 >
                   System
                 </button>
@@ -176,25 +176,25 @@ export default function SettingsPage() {
                   <div className="text-xs text-text-muted mt-0.5">{t('settings.language_desc', 'Pilih bahasa aplikasi')}</div>
                 </div>
               </div>
-              <div className="flex bg-surface-subtle p-1 rounded-xl shrink-0 border border-border/50 flex-wrap sm:flex-nowrap">
+              <div className="flex bg-surface-subtle p-1 rounded-xl shrink-0 border border-border/50 flex-wrap sm:flex-nowrap w-full sm:w-auto">
                 <button 
                   type="button"
                   onClick={() => handleLangChange('ID')}
-                  className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${i18n.language === 'ID' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
+                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${i18n.language === 'ID' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
                 >
                   Bahasa Indonesia
                 </button>
                 <button 
                   type="button"
                   onClick={() => handleLangChange('EN')}
-                  className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${i18n.language === 'EN' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
+                  className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all whitespace-nowrap ${i18n.language === 'EN' ? 'bg-surface shadow-sm text-text-main' : 'text-text-muted hover:text-text-main'}`}
                 >
                   English
                 </button>
               </div>
             </div>
             
-            <div className="flex items-center justify-between p-3 rounded-[16px] hover:bg-surface-subtle transition-colors">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 rounded-[16px] hover:bg-surface-subtle transition-colors gap-4 sm:gap-0">
               <div className="flex items-center gap-4">
                 <div className="bg-surface-subtle p-2 rounded-[12px]">
                   <Tag className="w-5 h-5 text-text-secondary" />
@@ -204,7 +204,7 @@ export default function SettingsPage() {
                   <div className="text-xs text-text-muted mt-0.5">{t('settings.categories_desc', 'Kelola kategori pemasukan dan pengeluaran')}</div>
                 </div>
               </div>
-              <Button asChild variant="outline" size="sm" className="rounded-[12px] font-bold transition-all duration-300 hover:scale-105 hover:bg-brand hover:text-[#0e0f0c] hover:border-brand hover:shadow-md active:scale-95">
+              <Button asChild variant="outline" size="sm" className="w-full sm:w-auto rounded-[12px] font-bold transition-all duration-300 hover:scale-105 hover:bg-brand hover:text-[#0e0f0c] hover:border-brand hover:shadow-md active:scale-95">
                 <Link href="/app/settings/categories">{t('settings.manage_categories', 'Kelola Kategori')}</Link>
               </Button>
             </div>
@@ -277,7 +277,7 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent className="space-y-2">
 
-            <div className="flex items-center justify-between p-3 rounded-[16px] hover:bg-red-500/5 transition-colors">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 rounded-[16px] hover:bg-red-500/5 transition-colors gap-4 sm:gap-0">
               <div className="flex items-center gap-4">
                 <div>
                   <div className="font-bold text-sm text-expense">{t('settings.delete_account', 'Hapus Akun')}</div>
@@ -286,7 +286,7 @@ export default function SettingsPage() {
               </div>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
-                  <Button variant="outline" size="sm" className="rounded-[12px] border-expense text-expense hover:bg-expense hover:text-white font-bold bg-transparent">{t('settings.delete_btn', 'Hapus')}</Button>
+                  <Button variant="outline" size="sm" className="w-full sm:w-auto rounded-[12px] border-expense text-expense hover:bg-expense hover:text-white font-bold bg-transparent">{t('settings.delete_btn', 'Hapus')}</Button>
                 </AlertDialogTrigger>
                 <AlertDialogContent className="rounded-[24px]">
                   <AlertDialogHeader>

@@ -47,10 +47,10 @@ export default function BudgetsPage() {
   const expenseCategories = categories?.filter(c => c.kind === 'expense') || []
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-10 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-10 pb-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main">{t('budgets.title', 'Anggaran')}</h1>
+          <h1 className="text-2xl md:text-3xl font-black text-text-main">{t('budgets.title', 'Anggaran')}</h1>
           <p className="text-text-muted font-medium mt-1">{t('budgets.desc', 'Kelola batas pengeluaran bulan {{month}}.', { month: currentMonthName })}</p>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default function BudgetsPage() {
               onClick={() => openSheet(cat.id, budgetAmount > 0 ? budgetAmount : undefined)}
               className="border border-border/50 rounded-[24px] shadow-sm bg-surface overflow-hidden hover:border-brand transition-all duration-200 cursor-pointer active:scale-[0.98]"
             >
-              <CardContent className="p-5">
+              <CardContent className="p-3 md:p-4 lg:p-5">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-[16px] text-xl" style={{ backgroundColor: cat.color || '#e2e8f0', color: '#fff' }}>

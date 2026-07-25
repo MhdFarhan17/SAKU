@@ -54,7 +54,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 overflow-y-auto bg-canvas pb-20 md:pb-0">
+      <main className="flex-1 overflow-y-auto bg-canvas pb-24 md:pb-0">
         {children}
       </main>
 

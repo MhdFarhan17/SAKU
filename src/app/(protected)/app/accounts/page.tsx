@@ -106,10 +106,10 @@ export default function AccountsPage() {
   }
 
   return (
-    <div className="p-6 max-w-5xl mx-auto space-y-10 pb-24">
+    <div className="p-4 md:p-6 max-w-5xl mx-auto space-y-6 md:space-y-10 pb-24">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-text-main">{t('accounts.title', 'Akun')}</h1>
+          <h1 className="text-2xl md:text-3xl font-black text-text-main">{t('accounts.title', 'Akun')}</h1>
           <p className="text-text-muted mt-1">{t('accounts.desc', 'Kelola dompet, rekening, dan kartu Anda.')}</p>
         </div>
         <Button 
@@ -131,10 +131,10 @@ export default function AccountsPage() {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {accounts?.map((account) => (
           <Card key={account.id} onClick={() => openEdit(account)} className="rounded-[24px] hover:border-brand transition-all duration-200 cursor-pointer active:scale-[0.98] hover:shadow-md border-border bg-surface shadow-sm">
-            <CardContent className="p-5 flex flex-col gap-6">
+            <CardContent className="p-4 md:p-5 flex flex-col gap-4 md:gap-6">
               <div className="flex justify-between items-start">
                 <AccountChip name={account.name} type={account.type} color={account.color} />
                 <span className="text-xs font-bold text-text-muted capitalize bg-canvas px-2 py-1 rounded-full">{account.currency}</span>
@@ -172,7 +172,7 @@ export default function AccountsPage() {
                   placeholder={t('accounts.account_name_placeholder', 'Contoh: BCA, GoPay, Dompet Tunai')} 
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  className="h-14 px-4 font-medium rounded-[16px] border-border bg-surface shadow-sm focus-visible:ring-brand"
+                  className="h-12 md:h-14 px-4 font-medium rounded-[16px] border-border bg-surface shadow-sm focus-visible:ring-brand"
                   required
                   autoFocus
                 />
@@ -184,7 +184,7 @@ export default function AccountsPage() {
                   <select 
                     value={type}
                     onChange={e => setType(e.target.value as any)}
-                    className="flex h-14 w-full appearance-none rounded-[16px] border border-border bg-surface px-4 py-2 font-medium shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    className="flex h-12 md:h-14 w-full appearance-none rounded-[16px] border border-border bg-surface px-4 py-2 font-medium shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                     required
                   >
                     <option value="cash">{t('accounts.type_cash', 'Tunai (Cash)')}</option>
@@ -208,7 +208,7 @@ export default function AccountsPage() {
                     placeholder={t('accounts.starting_balance_placeholder', '0')} 
                     value={balance}
                     onChange={handleBalanceChange}
-                    className="h-14 pl-12 pr-4 font-bold rounded-[16px] border-border bg-surface shadow-sm focus-visible:ring-brand text-lg"
+                    className="h-12 md:h-14 pl-12 pr-4 font-bold rounded-[16px] border-border bg-surface shadow-sm focus-visible:ring-brand text-lg"
                     required
                   />
                 </div>
@@ -216,7 +216,7 @@ export default function AccountsPage() {
             </div>
 
             <div className="pt-4 pb-safe space-y-3 shrink-0">
-              <Button type="submit" className="w-full h-14 rounded-full font-black text-lg bg-brand text-[#0e0f0c] hover:bg-brand/90" disabled={isSubmitting}>
+              <Button type="submit" className="w-full h-12 md:h-14 rounded-full font-black text-lg bg-brand text-[#0e0f0c] hover:bg-brand/90" disabled={isSubmitting}>
                 {isSubmitting ? '...' : t('accounts.save', 'Simpan Akun')}
               </Button>
               

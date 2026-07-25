@@ -45,12 +45,12 @@ export default function MarketingPage() {
       <main className="flex-1 w-full">
         
         {/* HERO SECTION */}
-        <section ref={heroRef} className="relative pt-32 pb-24 md:pt-40 md:pb-32 px-6 lg:px-12 max-w-[1400px] mx-auto w-full min-h-[90vh] flex flex-col justify-center">
+        <section ref={heroRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full min-h-[70vh] md:min-h-[90vh] flex flex-col justify-center">
           {/* Decorative Gradient Blob */}
           <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#9fe870]/30 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" />
           <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-blue-400/20 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-24 relative z-10">
             
             {/* Left Headline */}
             <motion.div 
@@ -58,10 +58,10 @@ export default function MarketingPage() {
               initial="hidden" 
               animate="visible" 
               variants={staggerContainer} 
-              className="flex-1 space-y-8 w-full"
+              className="flex-1 space-y-5 md:space-y-8 w-full"
             >
 
-              <motion.h1 variants={fadeInUp} className="text-[52px] md:text-[72px] lg:text-[84px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
+              <motion.h1 variants={fadeInUp} className="text-[28px] sm:text-[36px] md:text-[52px] lg:text-[72px] xl:text-[84px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
                 {t('home.hero_title_1', 'Cerdas kelola')} <br />
                 <span className="relative inline-block">
                   <span className="relative z-10">{t('home.hero_title_2', 'uang Anda.')}</span>
@@ -69,18 +69,18 @@ export default function MarketingPage() {
                 </span>
               </motion.h1>
               
-              <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-[#454745] max-w-xl leading-relaxed font-medium">
+              <motion.p variants={fadeInUp} className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#454745] max-w-xl leading-relaxed font-medium">
                 {t('home.hero_subtitle', 'Saku menggabungkan pencatatan, anggaran, target tabungan, dan pelacakan hutang dalam satu dasbor super cerdas.')}
               </motion.p>
               
               <motion.div variants={fadeInUp} className="pt-4 flex flex-col sm:flex-row gap-4">
-                <Button asChild className="h-16 px-10 text-lg rounded-[24px] bg-[#0e0f0c] hover:bg-[#2a2a2a] text-white font-bold shadow-xl shadow-black/10 transition-all hover:scale-105 active:scale-95 group border-none">
+                <Button asChild className="h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 text-base md:text-lg rounded-[24px] bg-[#0e0f0c] hover:bg-[#2a2a2a] text-white font-bold shadow-xl shadow-black/10 transition-all hover:scale-105 active:scale-95 group border-none">
                   <Link href="/signup">
                     {t('home.btn_start', 'Mulai Sekarang')}
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="h-16 px-10 text-lg rounded-[24px] bg-white border border-gray-200 shadow-sm text-[#0e0f0c] hover:bg-gray-50 hover:text-[#0e0f0c] font-bold transition-all hover:scale-105 active:scale-95">
+                <Button asChild variant="outline" className="h-12 sm:h-14 md:h-16 px-6 sm:px-8 md:px-10 text-base md:text-lg rounded-[24px] bg-white border border-gray-200 shadow-sm text-[#0e0f0c] hover:bg-gray-50 hover:text-[#0e0f0c] font-bold transition-all hover:scale-105 active:scale-95">
                   <Link href="#features">{t('home.btn_features', 'Lihat Fitur')}</Link>
                 </Button>
               </motion.div>
@@ -94,7 +94,7 @@ export default function MarketingPage() {
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex-1 w-full max-w-[600px] lg:max-w-none relative perspective-1000"
             >
-              <div className="relative bg-white/60 backdrop-blur-3xl rounded-[40px] p-4 md:p-8 shadow-2xl shadow-black/10 border border-white flex items-center justify-center overflow-visible group transform-gpu rotate-y-[-10deg] rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-all duration-700">
+              <div className="relative bg-white/60 backdrop-blur-3xl rounded-[24px] md:rounded-[40px] p-3 md:p-8 shadow-2xl shadow-black/10 border border-white flex items-center justify-center overflow-visible group transform-gpu md:rotate-y-[-10deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-all duration-700">
                 
                 {/* Main Dashboard UI Mockup */}
                 <div className="w-full bg-[#fbfcfb] rounded-[24px] border border-[#e2e6eb] shadow-sm overflow-hidden flex flex-col relative z-10">
@@ -115,7 +115,7 @@ export default function MarketingPage() {
                     <div className="flex justify-between items-end">
                       <div>
                         <div className="text-sm font-bold text-[#868685] mb-1">{t('home.mock_total_balance', 'Total Saldo')}</div>
-                        <div className="text-4xl font-black">Rp 24.500.000</div>
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-black">Rp 24.500.000</div>
                       </div>
                       <div className="bg-[#9fe870] text-[#0e0f0c] text-xs font-bold px-3 py-1.5 rounded-full">+12%</div>
                     </div>
@@ -175,26 +175,26 @@ export default function MarketingPage() {
         </section>
 
         {/* BENTO GRID FEATURES */}
-        <section id="features" className="py-32 px-6 lg:px-12 max-w-[1400px] mx-auto w-full">
+        <section id="features" className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-10 md:mb-16 lg:mb-20"
           >
-            <h2 className="text-[40px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-6">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[40px] lg:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-4 md:mb-6">
               {t('home.feat_title_1', 'Fitur yang Anda butuhkan,')} <br className="hidden md:block"/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
                 {t('home.feat_title_2', 'tanpa kerumitan.')}
               </span>
             </h2>
-            <p className="text-xl text-[#454745] max-w-2xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-[#454745] max-w-2xl mx-auto">
               {t('home.feat_subtitle', 'Dibangun dengan teknologi terbaru untuk memberikan pengalaman yang secepat kilat dan aman.')}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,_auto)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[minmax(220px,_auto)] md:auto-rows-[minmax(300px,_auto)]">
             
             {/* Box 1: Visual Analytics (Wide) */}
             <motion.div 
@@ -202,7 +202,7 @@ export default function MarketingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="md:col-span-2 bg-white rounded-[32px] p-8 md:p-12 border border-[#e2e6eb] shadow-sm relative overflow-hidden group"
+              className="md:col-span-2 bg-white rounded-[24px] md:rounded-[32px] p-5 sm:p-6 md:p-8 lg:p-12 border border-[#e2e6eb] shadow-sm relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[#9fe870]/20 to-transparent rounded-bl-full -z-0 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
               
@@ -210,8 +210,8 @@ export default function MarketingPage() {
                 <div className="w-14 h-14 bg-[#0e0f0c] text-[#9fe870] rounded-[16px] flex items-center justify-center mb-6">
                   <PieChart className="w-7 h-7" />
                 </div>
-                <h3 className="text-3xl font-black mb-3">{t('home.feat_1_title', 'Analitik Tajam')}</h3>
-                <p className="text-lg text-[#737e8d] font-medium leading-relaxed mb-8">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-3">{t('home.feat_1_title', 'Analitik Tajam')}</h3>
+                <p className="text-base md:text-lg text-[#737e8d] font-medium leading-relaxed mb-4 md:mb-8">
                   {t('home.feat_1_desc', 'Pantau tren pengeluaran dengan grafik interaktif. Ketahui secara pasti ke mana uang Anda mengalir setiap bulannya.')}
                 </p>
               </div>
@@ -238,7 +238,7 @@ export default function MarketingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white rounded-[32px] p-8 md:p-10 border border-[#e2e6eb] shadow-sm flex flex-col justify-between group"
+              className="bg-white rounded-[24px] md:rounded-[32px] p-5 sm:p-6 md:p-8 lg:p-10 border border-[#e2e6eb] shadow-sm flex flex-col justify-between group"
             >
               <div>
                 <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-[16px] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -266,7 +266,7 @@ export default function MarketingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-[#0e0f0c] text-white rounded-[32px] p-8 md:p-10 shadow-xl flex flex-col justify-between group overflow-hidden relative"
+              className="bg-[#0e0f0c] text-white rounded-[24px] md:rounded-[32px] p-5 sm:p-6 md:p-8 lg:p-10 shadow-xl flex flex-col justify-between group overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent pointer-events-none" />
               <div className="relative z-10">
@@ -295,7 +295,7 @@ export default function MarketingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="md:col-span-2 bg-[#9fe870] text-[#0e0f0c] rounded-[32px] p-8 md:p-12 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 group overflow-hidden"
+              className="md:col-span-2 bg-[#9fe870] text-[#0e0f0c] rounded-[24px] md:rounded-[32px] p-5 sm:p-6 md:p-8 lg:p-12 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 group overflow-hidden"
             >
               <div className="flex-1 max-w-sm">
                 <div className="flex gap-3 mb-6">
@@ -306,7 +306,7 @@ export default function MarketingPage() {
                     <Repeat className="w-6 h-6" />
                   </div>
                 </div>
-                <h3 className="text-3xl font-black mb-3">{t('home.feat_4_title', 'Anggaran & Rutin')}</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-3">{t('home.feat_4_title', 'Anggaran & Rutin')}</h3>
                 <p className="text-[#0e0f0c]/70 font-medium leading-relaxed mb-6">
                   {t('home.feat_4_desc', 'Setel anggaran per kategori dan otomatisasi tagihan bulanan. Anti boncos, anti telat bayar.')}
                 </p>
@@ -347,11 +347,11 @@ export default function MarketingPage() {
         </section>
 
         {/* DARK MODE SHOWCASE */}
-        <section className="py-24 my-20 bg-[#0B0D11] text-white overflow-hidden relative">
+        <section className="py-16 my-10 md:py-24 md:my-20 bg-[#0B0D11] text-white overflow-hidden relative">
           {/* Subtle Grid Background */}
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
           
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-16">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -362,10 +362,10 @@ export default function MarketingPage() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <span className="text-xs font-bold uppercase tracking-wider text-white/70">{t('home.dark_badge', 'Tersedia Fitur Dark Mode')}</span>
               </div>
-              <h2 className="text-[40px] md:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-6">
+              <h2 className="text-[28px] sm:text-[36px] md:text-[40px] lg:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-4 md:mb-6">
                 {t('home.dark_title_1', 'Gelap, Elegan,')} <br/> {t('home.dark_title_2', 'Nyaman di Mata.')}
               </h2>
-              <p className="text-xl text-gray-400 max-w-lg mb-8 leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-gray-400 max-w-lg mb-6 md:mb-8 leading-relaxed">
                 <Trans i18nKey="home.dark_desc" components={{ 1: <strong /> }}>
                   Saku hadir dengan dukungan <strong>Dark Mode</strong> yang terintegrasi secara otomatis. Tetap fokus mengatur keuangan di malam hari tanpa membuat mata lelah.
                 </Trans>
@@ -409,7 +409,7 @@ export default function MarketingPage() {
         </section>
 
         {/* CTA HERO BAND */}
-        <section className="py-24 md:py-32 px-6 lg:px-12 text-center relative overflow-hidden">
+        <section className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-[#F6F8F5]/50 -z-10" />
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
@@ -418,17 +418,17 @@ export default function MarketingPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto space-y-8 md:space-y-12"
           >
-            <h2 className="text-[48px] md:text-[64px] lg:text-[80px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[80px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
               {t('home.cta_title_1', 'Mulai Kendalikan')} <br/> {t('home.cta_title_2', 'Uang Anda.')}
             </h2>
-            <p className="text-2xl text-[#454745] font-medium">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#454745] font-medium">
               {t('home.cta_desc', 'Gratis selamanya. Tidak ada iklan. Tidak ada langganan.')}
             </p>
             <div className="pt-4 flex justify-center">
-              <Button asChild className="h-20 px-16 text-2xl rounded-full bg-[#0e0f0c] hover:bg-[#2a2a2a] text-white font-black shadow-2xl shadow-black/20 hover:scale-105 active:scale-95 transition-all group border-none">
+              <Button asChild className="h-14 sm:h-16 md:h-20 px-8 sm:px-10 md:px-16 text-base sm:text-lg md:text-xl lg:text-2xl rounded-full bg-[#0e0f0c] hover:bg-[#2a2a2a] text-white font-black shadow-2xl shadow-black/20 hover:scale-105 active:scale-95 transition-all group border-none">
                 <Link href="/signup">
                   {t('home.cta_btn', 'Buat Akun Saku')}
-                  <ChevronRight className="w-8 h-8 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>

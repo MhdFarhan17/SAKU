@@ -29,8 +29,8 @@ export default function CategoriesPage() {
   const [icon, setIcon] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  if (isLoading) return <div className="p-6 font-medium">{t('categories.loading', 'Memuat kategori...')}</div>
-  if (error) return <div className="p-6 text-expense font-medium">{t('categories.error_load', 'Gagal memuat kategori.')}</div>
+  if (isLoading) return <div className="p-4 md:p-6 font-medium">{t('categories.loading', 'Memuat kategori...')}</div>
+  if (error) return <div className="p-4 md:p-6 text-expense font-medium">{t('categories.error_load', 'Gagal memuat kategori.')}</div>
 
   const incomeCategories = categories?.filter(c => c.kind === 'income') || []
   const expenseCategories = categories?.filter(c => c.kind === 'expense') || []
@@ -111,10 +111,10 @@ export default function CategoriesPage() {
   }
 
   return (
-    <div className="p-6 max-w-4xl mx-auto space-y-8 pb-24">
+    <div className="p-4 md:p-6 max-w-4xl mx-auto space-y-6 md:space-y-8 pb-24">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-black text-text-main">{t('settings.categories', 'Kategori')}</h1>
+          <h1 className="text-2xl md:text-3xl font-black text-text-main">{t('settings.categories', 'Kategori')}</h1>
           <p className="text-text-muted mt-1 font-medium">{t('settings.categories_desc', 'Kelola kategori pemasukan dan pengeluaran.')}</p>
         </div>
         <div className="flex gap-2">
@@ -140,10 +140,10 @@ export default function CategoriesPage() {
 
       <div className="space-y-4">
         <h2 className="text-lg font-bold text-text-main">{t('categories.expense', 'Pengeluaran')}</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {expenseCategories.map(cat => (
             <Card key={cat.id} onClick={() => openEdit(cat as any)} className="rounded-[16px] hover:border-brand cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md border-border shadow-sm">
-              <CardContent className="p-4 flex items-center justify-center">
+              <CardContent className="p-3 md:p-4 flex items-center justify-center">
                 <CategoryToken name={getTranslatedCategoryName(cat.name, t)} kind={cat.kind} icon={cat.icon} />
               </CardContent>
             </Card>
@@ -156,10 +156,10 @@ export default function CategoriesPage() {
 
       <div className="space-y-4">
         <h2 className="text-lg font-bold text-text-main">{t('categories.income', 'Pemasukan')}</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {incomeCategories.map(cat => (
             <Card key={cat.id} onClick={() => openEdit(cat as any)} className="rounded-[16px] hover:border-brand cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md border-border shadow-sm">
-              <CardContent className="p-4 flex items-center justify-center">
+              <CardContent className="p-3 md:p-4 flex items-center justify-center">
                 <CategoryToken name={getTranslatedCategoryName(cat.name, t)} kind={cat.kind} icon={cat.icon} />
               </CardContent>
             </Card>

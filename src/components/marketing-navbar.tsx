@@ -49,7 +49,7 @@ export function MarketingNavbar() {
           : "bg-transparent"
       )}
     >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 h-24 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-12 h-20 md:h-24 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
           <Image 
@@ -155,7 +155,7 @@ export function MarketingNavbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-24 left-4 right-4 bg-[#ffffff] border border-[#0e0f0c]/10 rounded-[24px] shadow-2xl p-8 flex flex-col gap-8 animate-in slide-in-from-top-4 fade-in-0">
+        <div className="md:hidden absolute top-20 left-4 right-4 bg-[#ffffff] border border-[#0e0f0c]/10 rounded-[24px] shadow-2xl p-6 flex flex-col gap-6 animate-in slide-in-from-top-4 fade-in-0">
           <div className="flex flex-col gap-6">
             {navLinks.map((link) => {
               const isActive = pathname === link.href

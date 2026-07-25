@@ -207,7 +207,7 @@ export function DashboardCharts({ totalBalance }: { totalBalance?: number }) {
             </CardTitle>
           </CardHeader>
           <CardContent className="relative z-10">
-            <div className="text-4xl font-black mt-2 tracking-tight truncate text-text-main">
+            <div className="text-3xl md:text-4xl lg:text-5xl font-black mt-2 tracking-tight truncate text-text-main">
               {formatMoney(totalBalance, 'IDR', 'id-ID')}
             </div>
           </CardContent>
@@ -230,7 +230,7 @@ export function DashboardCharts({ totalBalance }: { totalBalance?: number }) {
                 <TrendingUp className="w-4 h-4" /> {t('dashboard.chart_income', 'Pemasukan')}
               </p>
             </div>
-            <p className="text-3xl font-black text-income mt-2 truncate">{formatMoney(summaryStats.totalIncome, 'IDR', 'id-ID')}</p>
+            <p className="text-2xl md:text-3xl font-black text-income mt-2 truncate">{formatMoney(summaryStats.totalIncome, 'IDR', 'id-ID')}</p>
           </CardContent>
         </Card>
         
@@ -241,7 +241,7 @@ export function DashboardCharts({ totalBalance }: { totalBalance?: number }) {
                 <TrendingDown className="w-4 h-4" /> {t('dashboard.chart_expense', 'Pengeluaran')}
               </p>
             </div>
-            <p className="text-3xl font-black text-expense mt-2 truncate">{formatMoney(summaryStats.totalExpense, 'IDR', 'id-ID')}</p>
+            <p className="text-2xl md:text-3xl font-black text-expense mt-2 truncate">{formatMoney(summaryStats.totalExpense, 'IDR', 'id-ID')}</p>
           </CardContent>
         </Card>
 
@@ -252,7 +252,7 @@ export function DashboardCharts({ totalBalance }: { totalBalance?: number }) {
                 <TrendingUp className="w-4 h-4" /> {t('dashboard.chart_net_cashflow', 'Arus Kas Bersih')}
               </p>
             </div>
-            <p className={`text-3xl font-black mt-2 truncate ${summaryStats.net >= 0 ? 'text-brand' : 'text-red-500'}`}>
+            <p className={`text-2xl md:text-3xl font-black mt-2 truncate ${summaryStats.net >= 0 ? 'text-brand' : 'text-red-500'}`}>
               {summaryStats.net >= 0 ? '+' : ''}{formatMoney(summaryStats.net, 'IDR', 'id-ID')}
             </p>
           </CardContent>

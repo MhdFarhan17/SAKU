@@ -84,7 +84,7 @@ function LoginForm() {
       <div className="flex-1 flex flex-col min-h-screen overflow-y-auto">
         
         {/* Top bar */}
-        <div className="flex items-center justify-between p-6 md:p-8 shrink-0">
+        <div className="flex items-center justify-between p-5 sm:p-6 md:p-8 shrink-0">
           <Link href="/" className="inline-flex lg:hidden items-center gap-2 hover:opacity-80 transition-opacity">
             <Image src="/logos/logo.png" alt="Saku" width={28} height={28} className="object-contain" />
             <span className="text-xl font-black tracking-[-0.04em] text-[#0e0f0c]">Saku</span>
@@ -99,12 +99,12 @@ function LoginForm() {
         </div>
 
         {/* Form container */}
-        <div className="flex-1 flex items-center justify-center px-6 md:px-12 pb-8">
+        <div className="flex-1 flex items-center justify-center px-4 sm:px-6 md:px-12 pb-8">
           <div className="w-full max-w-[440px]">
 
             {/* Title */}
             <div className="mb-8">
-              <h2 className="text-[32px] md:text-[36px] font-black tracking-[-0.03em] text-[#0e0f0c] leading-tight">
+              <h2 className="text-[28px] sm:text-[32px] md:text-[36px] font-black tracking-[-0.03em] text-[#0e0f0c] leading-tight">
                 {t('auth_page.login_title', 'Masuk ke Akun')}
               </h2>
               <p className="text-[#868685] mt-1">
@@ -116,7 +116,7 @@ function LoginForm() {
             </div>
 
             {/* Form Card */}
-            <div className="bg-[#ffffff] rounded-[20px] border border-[#cfd5dd]/50 p-6 md:p-8 shadow-sm">
+            <div className="bg-[#ffffff] rounded-[20px] border border-[#cfd5dd]/50 p-5 sm:p-6 md:p-8 shadow-sm">
               
               {registered && (
                 <div className="mb-4 p-3 bg-[#e2f6d5] text-[#054d28] text-sm font-bold rounded-[12px] border border-[#9fe870]/30">
