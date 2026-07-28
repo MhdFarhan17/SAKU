@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     shortcut: '/logo.svg',
     apple: '/logo.svg',
   },
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'id_ID',
@@ -76,6 +77,24 @@ export default function RootLayout({
                 document.documentElement.classList.add('dark');
               }
             } catch (e) {}
+          `}
+        </Script>
+        <meta name="theme-color" content="#9fe870" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <Script id="pwa-sw-register" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(
+                  function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                  },
+                  function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                  }
+                );
+              });
+            }
           `}
         </Script>
       </head>

@@ -95,7 +95,14 @@
     "cta_btn": "Create Saku Account",
     "mock_invest": "Investment",
     "mock_income_caps": "INCOME",
-    "mock_expense_caps": "EXPENSE"
+    "mock_expense_caps": "EXPENSE",
+    "pwa_badge": "Saku PWA App",
+    "pwa_title_1": "Install on",
+    "pwa_title_2": "Home Screen.",
+    "pwa_desc": "Saku now supports Progressive Web App (PWA). Install it directly to your phone or laptop for lightning-fast access like a native app, without consuming huge memory.",
+    "pwa_btn_install": "Install Saku App",
+    "pwa_btn_installed": "Saku is Installed",
+    "pwa_ios_hint": "*iOS Users: Safari restricts automatic installation. Tap the Share button below and manually select 'Add to Home Screen'."
   },
   "features_page": {
     "hero_title_1": "All features,",

@@ -95,7 +95,14 @@
     "cta_btn": "Buat Akun Saku",
     "mock_invest": "Investasi",
     "mock_income_caps": "PEMASUKAN",
-    "mock_expense_caps": "PENGELUARAN"
+    "mock_expense_caps": "PENGELUARAN",
+    "pwa_badge": "Aplikasi PWA",
+    "pwa_title_1": "Pasang di",
+    "pwa_title_2": "Layar Utama.",
+    "pwa_desc": "Saku kini mendukung Progressive Web App (PWA). Install langsung ke HP atau laptop Anda untuk akses secepat kilat layaknya aplikasi native, tanpa memakan memori besar.",
+    "pwa_btn_install": "Install Aplikasi Saku",
+    "pwa_btn_installed": "Saku Sudah Terinstal",
+    "pwa_ios_hint": "*Pengguna iOS: Safari membatasi instalasi otomatis. Ketuk tombol Share di bawah dan pilih 'Add to Home Screen' secara manual."
   },
   "features_page": {
     "hero_title_1": "Semua fitur,",
