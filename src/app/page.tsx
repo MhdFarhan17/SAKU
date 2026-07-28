@@ -411,7 +411,7 @@ export default function MarketingPage() {
 
         {/* PWA SHOWCASE */}
         <section className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto w-full">
-          <div className="bg-[#9fe870]/10 rounded-[32px] md:rounded-[48px] p-8 sm:p-12 md:p-16 lg:p-20 border border-[#9fe870]/30 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+          <div className="bg-[#9fe870]/10 rounded-[24px] sm:rounded-[32px] md:rounded-[48px] p-6 sm:p-10 md:p-16 lg:p-20 border border-[#9fe870]/30 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 lg:gap-20">
             {/* Background decorative elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#9fe870]/20 rounded-full blur-[100px] pointer-events-none -z-10" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0e0f0c]/5 rounded-full blur-[80px] pointer-events-none -z-10" />
@@ -424,22 +424,22 @@ export default function MarketingPage() {
               className="flex-1 w-full relative z-10"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#e2e6eb] shadow-sm mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#0e0f0c] flex items-center gap-2">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#0e0f0c] flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#9fe870] animate-pulse" />
                   {t('home.pwa_badge', 'Aplikasi PWA')}
                 </span>
               </div>
-              <h2 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] leading-[1.05] font-black tracking-[-0.03em] mb-6 text-[#0e0f0c]">
+              <h2 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-[1.05] font-black tracking-[-0.03em] mb-4 md:mb-6 text-[#0e0f0c]">
                 {t('home.pwa_title_1', 'Pasang di')} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5ea330] to-[#254611]">
                   {t('home.pwa_title_2', 'Layar Utama.')}
                 </span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-[#454745] font-medium leading-relaxed mb-10 max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#454745] font-medium leading-relaxed mb-8 md:mb-10 max-w-lg">
                 {t('home.pwa_desc', 'Saku kini mendukung Progressive Web App (PWA). Install langsung ke HP atau laptop Anda untuk akses secepat kilat layaknya aplikasi native, tanpa memakan memori besar.')}
               </p>
               
-              <div className="max-w-[280px]">
+              <div className="w-full sm:max-w-[280px]">
                 <PwaInstallButton />
               </div>
             </motion.div>
@@ -452,50 +452,50 @@ export default function MarketingPage() {
               className="flex-1 w-full max-w-[400px] lg:max-w-[500px] relative z-10 flex justify-center"
             >
               {/* Phone Mockup */}
-              <div className="w-[280px] md:w-[320px] h-[580px] md:h-[650px] bg-[#0e0f0c] rounded-[48px] p-3 md:p-4 shadow-2xl relative border-4 border-[#e2e6eb]">
+              <div className="w-[260px] sm:w-[280px] md:w-[320px] h-[520px] sm:h-[580px] md:h-[650px] bg-[#0e0f0c] rounded-[36px] md:rounded-[48px] p-2 sm:p-3 md:p-4 shadow-2xl relative border-[3px] sm:border-4 border-[#e2e6eb]">
                 {/* Dynamic Island / Notch */}
-                <div className="absolute top-5 md:top-6 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-full z-20 flex justify-end items-center pr-4">
-                  <div className="w-3 h-3 rounded-full bg-[#1a1a1a]" />
+                <div className="absolute top-4 sm:top-5 md:top-6 left-1/2 -translate-x-1/2 w-24 sm:w-32 h-6 sm:h-7 bg-black rounded-full z-20 flex justify-end items-center pr-3 sm:pr-4">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#1a1a1a]" />
                 </div>
                 
                 {/* Screen */}
-                <div className="w-full h-full bg-[#fbfcfb] rounded-[36px] overflow-hidden relative flex flex-col">
+                <div className="w-full h-full bg-[#fbfcfb] rounded-[28px] md:rounded-[36px] overflow-hidden relative flex flex-col">
                   {/* App Header Mockup */}
-                  <div className="h-24 bg-white border-b border-[#e2e6eb] flex items-end px-6 pb-4">
-                    <div className="font-black text-xl flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-md bg-[#9fe870] flex items-center justify-center">
-                        <Wallet className="w-4 h-4 text-[#0e0f0c]" />
+                  <div className="h-20 sm:h-24 bg-white border-b border-[#e2e6eb] flex items-end px-4 sm:px-6 pb-3 sm:pb-4">
+                    <div className="font-black text-lg sm:text-xl flex items-center gap-2">
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-[#9fe870] flex items-center justify-center">
+                        <Wallet className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0e0f0c]" />
                       </div>
                       Saku.
                     </div>
                   </div>
                   {/* App Content Mockup */}
-                  <div className="p-5 flex-1 bg-[#fbfcfb] space-y-4">
-                    <div className="w-full h-24 bg-gradient-to-r from-[#9fe870] to-[#7ac24f] rounded-[20px] p-4 flex flex-col justify-end shadow-sm">
-                      <div className="text-white/80 text-xs font-bold mb-1">{t('home.mock_total_balance', 'Total Saldo')}</div>
-                      <div className="text-white font-black text-xl">Rp 24.500.000</div>
+                  <div className="p-4 sm:p-5 flex-1 bg-[#fbfcfb] space-y-3 sm:space-y-4">
+                    <div className="w-full h-20 sm:h-24 bg-gradient-to-r from-[#9fe870] to-[#7ac24f] rounded-[16px] sm:rounded-[20px] p-3 sm:p-4 flex flex-col justify-end shadow-sm">
+                      <div className="text-white/80 text-[10px] sm:text-xs font-bold mb-1">{t('home.mock_total_balance', 'Total Saldo')}</div>
+                      <div className="text-white font-black text-lg sm:text-xl">Rp 24.500.000</div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-white border border-[#e2e6eb] rounded-[16px] p-3 shadow-sm">
-                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-2">
-                          <div className="w-4 h-4 rounded-full bg-green-500" />
+                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                      <div className="bg-white border border-[#e2e6eb] rounded-[12px] sm:rounded-[16px] p-2.5 sm:p-3 shadow-sm">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-100 flex items-center justify-center mb-1.5 sm:mb-2">
+                          <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500" />
                         </div>
-                        <div className="h-2 w-16 bg-gray-200 rounded-full mb-1" />
-                        <div className="h-3 w-20 bg-gray-300 rounded-full" />
+                        <div className="h-1.5 sm:h-2 w-12 sm:w-16 bg-gray-200 rounded-full mb-1" />
+                        <div className="h-2 sm:h-3 w-16 sm:w-20 bg-gray-300 rounded-full" />
                       </div>
-                      <div className="bg-white border border-[#e2e6eb] rounded-[16px] p-3 shadow-sm">
-                        <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mb-2">
-                          <div className="w-4 h-4 rounded-full bg-red-500" />
+                      <div className="bg-white border border-[#e2e6eb] rounded-[12px] sm:rounded-[16px] p-2.5 sm:p-3 shadow-sm">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-red-100 flex items-center justify-center mb-1.5 sm:mb-2">
+                          <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500" />
                         </div>
-                        <div className="h-2 w-16 bg-gray-200 rounded-full mb-1" />
-                        <div className="h-3 w-20 bg-gray-300 rounded-full" />
+                        <div className="h-1.5 sm:h-2 w-12 sm:w-16 bg-gray-200 rounded-full mb-1" />
+                        <div className="h-2 sm:h-3 w-16 sm:w-20 bg-gray-300 rounded-full" />
                       </div>
                     </div>
 
-                    <div className="w-full h-32 bg-white border border-[#e2e6eb] rounded-[16px] shadow-sm mt-2 flex flex-col gap-2 p-3">
-                       <div className="h-3 w-24 bg-gray-200 rounded-full mb-2" />
-                       <div className="flex gap-2 h-full items-end">
+                    <div className="w-full h-24 sm:h-32 bg-white border border-[#e2e6eb] rounded-[12px] sm:rounded-[16px] shadow-sm mt-1 sm:mt-2 flex flex-col gap-1.5 sm:gap-2 p-2.5 sm:p-3">
+                       <div className="h-2 sm:h-3 w-20 sm:w-24 bg-gray-200 rounded-full mb-1 sm:mb-2" />
+                       <div className="flex gap-1 sm:gap-2 h-full items-end">
                          <div className="w-full bg-[#e2f6d5] rounded-t-sm h-[40%]" />
                          <div className="w-full bg-green-500 rounded-t-sm h-[80%]" />
                          <div className="w-full bg-[#e2f6d5] rounded-t-sm h-[60%]" />
@@ -505,12 +505,12 @@ export default function MarketingPage() {
                   </div>
                   
                   {/* Bottom Navigation Mockup */}
-                  <div className="h-16 bg-white border-t border-[#e2e6eb] flex items-center justify-around px-2">
-                    <div className="w-10 h-10 rounded-full bg-[#9fe870]/20 flex items-center justify-center text-[#254611]"><Wallet className="w-5 h-5" /></div>
-                    <div className="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gray-400"><PieChart className="w-5 h-5" /></div>
-                    <div className="w-10 h-10 rounded-full bg-[#0e0f0c] flex items-center justify-center text-white -mt-5 shadow-lg"><div className="text-xl">+</div></div>
-                    <div className="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gray-400"><Target className="w-5 h-5" /></div>
-                    <div className="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gray-400"><Users className="w-5 h-5" /></div>
+                  <div className="h-14 sm:h-16 bg-white border-t border-[#e2e6eb] flex items-center justify-around px-1 sm:px-2">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#9fe870]/20 flex items-center justify-center text-[#254611]"><Wallet className="w-4 h-4 sm:w-5 sm:h-5" /></div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-transparent flex items-center justify-center text-gray-400"><PieChart className="w-4 h-4 sm:w-5 sm:h-5" /></div>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0e0f0c] flex items-center justify-center text-white -mt-4 sm:-mt-5 shadow-lg"><div className="text-lg sm:text-xl">+</div></div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-transparent flex items-center justify-center text-gray-400"><Target className="w-4 h-4 sm:w-5 sm:h-5" /></div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-transparent flex items-center justify-center text-gray-400"><Users className="w-4 h-4 sm:w-5 sm:h-5" /></div>
                   </div>
                 </div>
               </div>
