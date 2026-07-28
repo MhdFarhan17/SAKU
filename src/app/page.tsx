@@ -9,7 +9,7 @@ import { ScrollToTop } from '@/components/scroll-to-top'
 import { PwaInstallButton } from '@/components/pwa-install-button'
 import { ArrowRight, Check, Activity, Target, PieChart, Users, Repeat, Shield, Wallet, ChevronRight } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useTranslation, Trans } from 'react-i18next'
 
 export default function MarketingPage() {
@@ -20,8 +20,18 @@ export default function MarketingPage() {
     offset: ["start start", "end start"]
   })
   
-  const yImage = useTransform(scrollYProgress, [0, 1], [0, 200])
-  const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const yImageDesktop = useTransform(scrollYProgress, [0, 1], [0, 200])
+  const opacityTextDesktop = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+
+  const [isMobile, setIsMobile] = useState(true)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1024)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
 
   // Animation Variants
   const fadeInUp: any = {
@@ -55,14 +65,14 @@ export default function MarketingPage() {
             
             {/* Left Headline */}
             <motion.div 
-              style={{ opacity: opacityText }}
+              style={{ opacity: isMobile ? 1 : opacityTextDesktop }}
               initial="hidden" 
               animate="visible" 
               variants={staggerContainer} 
               className="flex-1 space-y-5 md:space-y-8 w-full"
             >
 
-              <motion.h1 variants={fadeInUp} className="text-[28px] sm:text-[36px] md:text-[52px] lg:text-[72px] xl:text-[84px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
+              <motion.h1 variants={fadeInUp} className="text-[32px] sm:text-[40px] md:text-[52px] lg:text-[72px] xl:text-[84px] leading-[1.05] font-black tracking-[-0.04em] text-[#0e0f0c]">
                 {t('home.hero_title_1', 'Cerdas kelola')} <br />
                 <span className="relative inline-block">
                   <span className="relative z-10">{t('home.hero_title_2', 'uang Anda.')}</span>
@@ -89,13 +99,13 @@ export default function MarketingPage() {
 
             {/* Right Interactive Mockup */}
             <motion.div 
-              style={{ y: yImage }}
+              style={{ y: isMobile ? 0 : yImageDesktop }}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex-1 w-full max-w-[600px] lg:max-w-none relative perspective-1000"
+              className="flex-1 w-full max-w-[600px] lg:max-w-none relative perspective-1000 mt-6 md:mt-0"
             >
-              <div className="relative bg-white/60 backdrop-blur-3xl rounded-[24px] md:rounded-[40px] p-3 md:p-8 shadow-2xl shadow-black/10 border border-white flex items-center justify-center overflow-visible group transform-gpu md:rotate-y-[-10deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-all duration-700">
+              <div className="relative bg-white/60 backdrop-blur-3xl rounded-[24px] md:rounded-[40px] p-2 sm:p-4 md:p-8 shadow-2xl shadow-black/10 border border-white flex items-center justify-center overflow-visible group transform-gpu md:rotate-y-[-10deg] md:rotate-x-[5deg] hover:rotate-y-0 hover:rotate-x-0 transition-all duration-700">
                 
                 {/* Main Dashboard UI Mockup */}
                 <div className="w-full bg-[#fbfcfb] rounded-[24px] border border-[#e2e6eb] shadow-sm overflow-hidden flex flex-col relative z-10">
@@ -112,23 +122,23 @@ export default function MarketingPage() {
                       <div className="w-3 h-3 rounded-full bg-green-400"></div>
                     </div>
                   </div>
-                  <div className="p-6 space-y-6 bg-[#fbfcfb]">
+                  <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 bg-[#fbfcfb]">
                     <div className="flex justify-between items-end">
                       <div>
-                        <div className="text-sm font-bold text-[#868685] mb-1">{t('home.mock_total_balance', 'Total Saldo')}</div>
-                        <div className="text-2xl sm:text-3xl md:text-4xl font-black">Rp 24.500.000</div>
+                        <div className="text-xs sm:text-sm font-bold text-[#868685] mb-1">{t('home.mock_total_balance', 'Total Saldo')}</div>
+                        <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black">Rp 24.500.000</div>
                       </div>
-                      <div className="bg-[#9fe870] text-[#0e0f0c] text-xs font-bold px-3 py-1.5 rounded-full">+12%</div>
+                      <div className="bg-[#9fe870] text-[#0e0f0c] text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full">+12%</div>
                     </div>
 
-                    <div className="flex gap-4">
-                      <div className="flex-1 bg-white border border-[#e2e6eb] p-4 rounded-[16px] shadow-sm">
-                        <div className="text-xs font-bold text-[#868685] mb-1">{t('home.mock_income', 'Pemasukan')}</div>
-                        <div className="text-lg font-black text-green-600">Rp 15.000.000</div>
+                    <div className="flex gap-2 sm:gap-4 flex-col sm:flex-row">
+                      <div className="flex-1 bg-white border border-[#e2e6eb] p-3 sm:p-4 rounded-[12px] sm:rounded-[16px] shadow-sm">
+                        <div className="text-[10px] sm:text-xs font-bold text-[#868685] mb-1">{t('home.mock_income', 'Pemasukan')}</div>
+                        <div className="text-sm sm:text-base md:text-lg font-black text-green-600">Rp 15.000.000</div>
                       </div>
-                      <div className="flex-1 bg-white border border-[#e2e6eb] p-4 rounded-[16px] shadow-sm">
-                        <div className="text-xs font-bold text-[#868685] mb-1">{t('home.mock_expense', 'Pengeluaran')}</div>
-                        <div className="text-lg font-black text-red-500">Rp 4.200.000</div>
+                      <div className="flex-1 bg-white border border-[#e2e6eb] p-3 sm:p-4 rounded-[12px] sm:rounded-[16px] shadow-sm">
+                        <div className="text-[10px] sm:text-xs font-bold text-[#868685] mb-1">{t('home.mock_expense', 'Pengeluaran')}</div>
+                        <div className="text-sm sm:text-base md:text-lg font-black text-red-500">Rp 4.200.000</div>
                       </div>
                     </div>
                   </div>
@@ -185,7 +195,7 @@ export default function MarketingPage() {
             className="text-center mb-10 md:mb-16 lg:mb-20"
           >
             <h2 className="text-[28px] sm:text-[36px] md:text-[40px] lg:text-[56px] leading-[1.05] font-black tracking-[-0.03em] mb-4 md:mb-6">
-              {t('home.feat_title_1', 'Fitur yang Anda butuhkan,')} <br className="hidden md:block"/>
+              {t('home.feat_title_1', 'Fitur yang Anda butuhkan,')} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
                 {t('home.feat_title_2', 'tanpa kerumitan.')}
               </span>
